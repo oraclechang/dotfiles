@@ -1,74 +1,263 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   Filename: .vimrc                                                         "
-" Maintainer: Michael J. Smalley <michaeljsmalley@gmail.com>                 "
-"        URL: http://github.com/michaeljsmalley/dotfiles                     "
-"                                                                            "
-"                                                                            "
-" Sections:                                                                  "
-"   01. General ................. General Vim behavior                       "
-"   02. Events .................. General autocmd events                     "
-"   03. Theme/Colors ............ Colors, fonts, etc.                        "
-"   04. Vim UI .................. User interface behavior                    "
-"   05. Text Formatting/Layout .. Text, tab, indentation related             "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible " be iMproved
+filetype off " required!
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 01. General                                                                "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
+"git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"https://github.com/gmarik/vundle/wiki/Vundle-for-Windows
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 02. Events                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
 
-" In Makefiles DO NOT use spaces instead of tabs
-autocmd FileType make setlocal noexpandtab
-" In Ruby files, use 2 spaces instead of 4 for tabs
-autocmd FileType ruby setlocal sw=2 ts=2 sts=2
 
-" Enable omnicompletion (to use, hold Ctrl+X then Ctrl+O while in Insert mode.
-set ofu=syntaxcomplete#Complete
+"------------------------------------------------------------------------------------- 
+" My Bundles here:   
+" http://lowid.tistory.com/?page=5 
+"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 03. Theme/Colors                                                           "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256              " enable 256-color mode.
-syntax enable             " enable syntax highlighting (previously syntax on).
-colorscheme molokai       " set colorscheme
+Bundle 'https://github.com/Lokaltog/vim-powerline.git' 
 
-" Prettify JSON files
-autocmd BufRead,BufNewFile *.json set filetype=json
-autocmd Syntax json sou ~/.vim/syntax/json.vim
+"Bundle 'c.vim' 
+" c의 skel을 미리 작성해 줍니다. snipMate랑 같이쓰세요... 간단한건 아래의 박스... 더 많은 단축키는 여기를 참조하세요 
+" http://lug.fh-swf.de/vim/vim-c/csupport.html
 
-" Prettify Vagrantfile
-autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
+Bundle 'DoxygenToolkit.vim' 
 
-" Highlight characters that go over 80 columns
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+"Bundle 'EasyMotion' 
+" 단어(word)간 이동을 쉽게 합니다, \\w를 눌러보세요 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 04. Vim UI                                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set number                " show line numbers
-set cul                   " highlight current line
-set laststatus=2          " last window always has a statusline
-set nohlsearch            " Don't continue to highlight searched phrases.
-set incsearch             " But do highlight as you type your search.
-set ignorecase            " Make searches case-insensitive.
-set ruler                 " Always show info along bottom.
-set showmatch
-set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
+Bundle 'ctags.vim'     
+"http://sosal.tistory.com/11
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 05. Text Formatting/Layout                                                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set autoindent            " auto-indent
-set tabstop=4             " tab spacing
-set softtabstop=4         " unify
-set shiftwidth=4          " indent/outdent by 4 columns
-set shiftround            " always indent/outdent to the nearest tabstop
-set expandtab             " use spaces instead of tabs
-set smarttab              " use tabs at the start of a line, spaces elsewhere
-set nowrap                " don't wrap text
+"Bundle 'cscope.vim' 
+"https://github.com/vim-scripts/cscope.vim
+
+"Bundle 'snipMate' 
+" 명령어 자동완성 기능입니다. 
+
+"Bundle 'ShowMarks' 
+" 왼쪽에 마크를 표시해 줍니다.
+
+"Bundle 'Align' 
+" 원하는데로 정렬을 지정할 수 있습니다  http://www.drchip.org/astronaut/vim/align.html#Examples
+
+Bundle 'Tagbar' 
+" taglist와 비슷한 확장기능인데... 그것보다 좀 더 좋아 보이네요.
+
+Bundle 'The-NERD-tree' 
+" 이번에도 디렉토리 이동을 쉽게 할 수 있는 확장기능 입니다.  
+
+"Bundle 'AutoComplPop' 
+"단어 자동완성
+
+Bundle 'a.vim' 
+"소스의 헤더 전환
+
+"Bundle 'minibufexpl.vim' 
+" 버퍼를 보기쉽게 만들어 줍니다
+
+"Bundle 'https://github.com/fholgado/minibufexpl.vim'
+
+Bundle 'fholgado/minibufexpl.vim'    
+"minibufexpl.vim 의 업데이트 버전
+
+"Bundle 'matchparenpp' 
+" 괄호 (),[],{}에 커서를 갖다대면, 상대 괄호를 깜박여 줍니다.
+
+"Bundle 'Solarized'
+
+Bundle 'Source-Explorer-srcexpl.vim' 
+"http://neodelicious.tistory.com/242
+
+Bundle 'airblade/vim-gitgutter'
+"https://github.com/airblade/vim-gitgutter 
+"------------------------------------------------------------------------------------- 
+
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+" ...
+
+
+filetype plugin indent on " required!
+"
+" Brief help
+" :BundleList - list configured bundles
+" :BundleInstall(!) - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!) - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
+
+
+" Enable
+color desert
+"colorscheme solarized and set bg=dark or set bg=light
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+"set nocompatible
+set autoindent
+set smartindent
+
+set cindent
+set tabstop=8    "set ts=8            " in vim, help tabstop
+set shiftwidth=4    " set sw = 4
+set softtabstop=4    "set sts=4
+set noexpandtab    " in vim, help noexpandtab
+set showmatch "(=set sm)
+set ruler
+
+" Search option 
+set incsearch 
+set ic
+set hlsearch
+"set virtualedit=all 
+set smartcase 
+set tagbsearch    "Tag 를 이진검색
+
+syntax on 
+set iminsert=0         " 입력 모드로 들어갈 때 항상 영문으로 시작 
+set imsearch=0        " 검색 모드로 들어갈 때 항상 영문으로 시작 
+"set autochdir    " 현재 폴더를 열려진 파일로 자동으로 변경. 다른 모듈과 충돌날 수 도 있음
+set foldmethod=manual    " 폴딩 
+"set paste     " 터미널에서 붙여넣기 시 indent 현상을 방지 할 수 있음. GUI (gvim) 에서는 켜면 안됨. :help paste
+
+" For ctags and taglist   
+"let Tlist_Exit_OnlyWindow = 1     " close Tlist window
+
+" 한글 깨짐 해결 
+"set fenc=UTF-8 
+"set fencs=UTF-8,CP949,EUC-KR 
+
+" font 바꾸었을 때 한글 깨짐 해결 
+"set encoding=utf-8 
+"set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI 
+"set guifontwide=Fixedsys:h11:cDEFAULT 
+"lang mes en_US 
+"source $VIMRUNTIME/delmenu.vim 
+"source $VIMRUNTIME/menu.vim 
+
+" For powerline
+"language en_US.UTF-8
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
+
+"Font 설정 
+"set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI 
+"set guifont=나눔고딕코딩:h11:cHANGEUL
+
+"창크기 조절 
+"au GUIEnter * winsize 150 50
+
+"시작 위치 설정 
+"au GUIEnter * winpos -1900 0 
+
+"전체화면으로 시작 
+"au GUIEnter  simalt ~x
+
+" Maps
+nnoremap <F8> :SrcExplToggle<CR>
+nnoremap <F9> :NERDTreeToggle<CR> 
+nnoremap <F10> :TagbarToggle<CR>
+
+:nn <A-a> <C-a>
+
+"let g:gitgutter_enabled = 0 
+let g:gitgutter_realtime = 0 
+let g:gitgutter_eager = 0
+
+"tags 
+set tags=$OWN/sys/src/tags 
+
+"cscope    // http://vimdoc.sourceforge.net/htmldoc/if_cscop.html#cscope-options 
+set csprg=/usr/bin/cscope 
+set csto=0    " *cscopetagorder* *csto* . 0 이면 cscope 먼저 사용. 1이면 tag 먼저 사용.  
+set cst    " *cscopetag* *cst* . tag 대신 cstag 를 사용. http://vimdoc.sourceforge.net/htmldoc/if_cscop.html . 반대는 set nocst 
+set nocsverb
+
+"if filereadable("./cscope.out") 
+"   cs add cscope.out 
+"else 
+   "cs add /usr/src/linux/cscope.out 
+"   cs add $OWN/sys/src/cscope.out 
+"endif 
+"set csverb 
+
+"for Autoloading Cscope Database  http://vim.wikia.com/wiki/Autoloading_Cscope_Database   
+function! LoadCscope() 
+  let db = findfile("cscope.out", ".;") 
+  if (!empty(db)) 
+    let path = strpart(db, 0, match(db, "/cscope.out$")) 
+    set nocscopeverbose " suppress 'duplicate connection' error 
+    exe "cs add " . db . " " . path 
+    set cscopeverbose 
+  endif 
+endfunction
+
+au BufEnter /* call LoadCscope()
+
+" http://vim.wikia.com/wiki/Cscope 
+if has('cscope') 
+  set cscopetag cscopeverbose 
+  if has('quickfix') 
+    set cscopequickfix=s-,c-,d-,i-,t-,e- 
+  endif 
+  cnoreabbrev csa cs add 
+  cnoreabbrev csf cs find 
+  cnoreabbrev csk cs kill 
+  cnoreabbrev csr cs reset 
+  cnoreabbrev css cs show 
+  cnoreabbrev csh cs help 
+  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src 
+
+  " Using 'CTRL-spacebar' then a search type makes the vim window 
+  " split horizontally, with search result displayed in 
+  " the new window.
+  nmap <C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR> 
+  nmap <C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR> 
+  nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+  " Hitting CTRL-space *twice* before the search type does a vertical 
+  " split instead of a horizontal one
+  nmap <C-Space><C-Space>s
+  \:vert scs find s <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>g
+  \:vert scs find g <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>c
+  \:vert scs find c <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>t
+  \:vert scs find t <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>e
+  \:vert scs find e <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>i
+  \:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+  nmap <C-Space><C-Space>d 
+  \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
+endif
+
+" 01. general
+" 02. Events
+" 03. Theme/Color
+" 04. Vim UI
+" 05. Text Formatting/Layout
+" 06. Bundle
+" 07. Plugin
+
