@@ -104,6 +104,7 @@ filetype plugin indent on " required!
 color desert
 "colorscheme solarized and set bg=dark or set bg=light
 
+set nu
 set nobackup
 set nowritebackup
 set noswapfile
