@@ -39,7 +39,7 @@ Bundle 'ctags.vim'
 "Bundle 'ShowMarks' 
 " 왼쪽에 마크를 표시해 줍니다.
 
-"Bundle 'Align' 
+Bundle 'Align' 
 " 원하는데로 정렬을 지정할 수 있습니다  http://www.drchip.org/astronaut/vim/align.html#Examples
 
 Bundle 'Tagbar' 
