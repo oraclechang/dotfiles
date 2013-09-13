@@ -1,104 +1,4 @@
 set nocompatible " be iMproved
-filetype off " required!
-
-"git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-"https://github.com/gmarik/vundle/wiki/Vundle-for-Windows
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-
-"------------------------------------------------------------------------------------- 
-" My Bundles here:   
-" http://lowid.tistory.com/?page=5 
-"
-
-Bundle 'https://github.com/Lokaltog/vim-powerline.git' 
-
-"Bundle 'c.vim' 
-" c의 skel을 미리 작성해 줍니다. snipMate랑 같이쓰세요... 간단한건 아래의 박스... 더 많은 단축키는 여기를 참조하세요 
-" http://lug.fh-swf.de/vim/vim-c/csupport.html
-
-Bundle 'DoxygenToolkit.vim' 
-
-"Bundle 'EasyMotion' 
-" 단어(word)간 이동을 쉽게 합니다, \\w를 눌러보세요 
-
-Bundle 'ctags.vim'     
-"http://sosal.tistory.com/11
-
-"Bundle 'cscope.vim' 
-"https://github.com/vim-scripts/cscope.vim
-
-"Bundle 'snipMate' 
-" 명령어 자동완성 기능입니다. 
-
-"Bundle 'ShowMarks' 
-" 왼쪽에 마크를 표시해 줍니다.
-
-"Bundle 'Align' 
-" 원하는데로 정렬을 지정할 수 있습니다  http://www.drchip.org/astronaut/vim/align.html#Examples
-
-Bundle 'Tagbar' 
-" taglist와 비슷한 확장기능인데... 그것보다 좀 더 좋아 보이네요.
-
-Bundle 'The-NERD-tree' 
-" 이번에도 디렉토리 이동을 쉽게 할 수 있는 확장기능 입니다.  
-
-"Bundle 'AutoComplPop' 
-"단어 자동완성
-
-Bundle 'a.vim' 
-"소스의 헤더 전환
-
-"Bundle 'minibufexpl.vim' 
-" 버퍼를 보기쉽게 만들어 줍니다
-
-"Bundle 'https://github.com/fholgado/minibufexpl.vim'
-
-Bundle 'fholgado/minibufexpl.vim'    
-"minibufexpl.vim 의 업데이트 버전
-
-"Bundle 'matchparenpp' 
-" 괄호 (),[],{}에 커서를 갖다대면, 상대 괄호를 깜박여 줍니다.
-
-"Bundle 'Solarized'
-
-Bundle 'Source-Explorer-srcexpl.vim' 
-"http://neodelicious.tistory.com/242
-
-Bundle 'airblade/vim-gitgutter'
-"https://github.com/airblade/vim-gitgutter 
-"------------------------------------------------------------------------------------- 
-
-" original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
-" ...
-
-
-filetype plugin indent on " required!
-"
-" Brief help
-" :BundleList - list configured bundles
-" :BundleInstall(!) - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!) - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
-
 
 " Enable
 color desert
@@ -170,11 +70,6 @@ set laststatus=2
 "au GUIEnter  simalt ~x
 
 " Maps
-nnoremap <F8> :SrcExplToggle<CR>
-nnoremap <F9> :NERDTreeToggle<CR> 
-nnoremap <F10> :TagbarToggle<CR>
-
-:nn <A-a> <C-a>
 
 "let g:gitgutter_enabled = 0 
 let g:gitgutter_realtime = 0 
@@ -212,7 +107,8 @@ au BufEnter /* call LoadCscope()
 
 " http://vim.wikia.com/wiki/Cscope 
 if has('cscope') 
-  set cscopetag cscopeverbose 
+  set cscopetag 
+  "set cscopeverbose 
   if has('quickfix') 
     set cscopequickfix=s-,c-,d-,i-,t-,e- 
   endif 
@@ -254,11 +150,133 @@ if has('cscope')
   \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
 endif
 
+"####################################################################################################################
 " 01. general
+
+"####################################################################################################################
 " 02. Events
+
+"####################################################################################################################
 " 03. Theme/Color
+
+"####################################################################################################################
 " 04. Vim UI
+
+"####################################################################################################################
 " 05. Text Formatting/Layout
+
+"####################################################################################################################
 " 06. Bundle
+if has('vundle') 
+
+    filetype off " required!
+
+    "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    "https://github.com/gmarik/vundle/wiki/Vundle-for-Windows
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+
+    " let Vundle manage Vundle
+    " required! 
+    Bundle 'gmarik/vundle'
+
+
+    "------------------------------------------------------------------------------------- 
+    " My Bundles here:   
+    " http://lowid.tistory.com/?page=5 
+    "
+
+    Bundle 'https://github.com/Lokaltog/vim-powerline.git' 
+
+    "Bundle 'c.vim' 
+    " c의 skel을 미리 작성해 줍니다. snipMate랑 같이쓰세요... 간단한건 아래의 박스... 더 많은 단축키는 여기를 참조하세요 
+    " http://lug.fh-swf.de/vim/vim-c/csupport.html
+
+    Bundle 'DoxygenToolkit.vim' 
+
+    "Bundle 'EasyMotion' 
+    " 단어(word)간 이동을 쉽게 합니다, \\w를 눌러보세요 
+
+    Bundle 'ctags.vim'     
+    "http://sosal.tistory.com/11
+
+    "Bundle 'cscope.vim' 
+    "https://github.com/vim-scripts/cscope.vim
+
+    "Bundle 'snipMate' 
+    " 명령어 자동완성 기능입니다. 
+
+    "Bundle 'ShowMarks' 
+    " 왼쪽에 마크를 표시해 줍니다.
+
+    Bundle 'Align' 
+    " 원하는데로 정렬을 지정할 수 있습니다  http://www.drchip.org/astronaut/vim/align.html#Examples
+
+    Bundle 'Tagbar' 
+    " taglist와 비슷한 확장기능인데... 그것보다 좀 더 좋아 보이네요.
+
+    Bundle 'The-NERD-tree' 
+    " 이번에도 디렉토리 이동을 쉽게 할 수 있는 확장기능 입니다.  
+
+    "Bundle 'AutoComplPop' 
+    "단어 자동완성
+
+    Bundle 'a.vim' 
+    "소스의 헤더 전환
+
+    "Bundle 'minibufexpl.vim' 
+    " 버퍼를 보기쉽게 만들어 줍니다
+
+    "Bundle 'https://github.com/fholgado/minibufexpl.vim'
+
+    Bundle 'fholgado/minibufexpl.vim'    
+    "minibufexpl.vim 의 업데이트 버전
+
+    "Bundle 'matchparenpp' 
+    " 괄호 (),[],{}에 커서를 갖다대면, 상대 괄호를 깜박여 줍니다.
+
+    "Bundle 'Solarized'
+
+    Bundle 'Source-Explorer-srcexpl.vim' 
+    "http://neodelicious.tistory.com/242
+
+    Bundle 'airblade/vim-gitgutter'
+    "https://github.com/airblade/vim-gitgutter 
+    "------------------------------------------------------------------------------------- 
+
+    " original repos on github
+    Bundle 'tpope/vim-fugitive'
+    Bundle 'Lokaltog/vim-easymotion'
+    Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+    Bundle 'tpope/vim-rails.git'
+    " vim-scripts repos
+    Bundle 'L9'
+    Bundle 'FuzzyFinder'
+    " non github repos
+    Bundle 'git://git.wincent.com/command-t.git'
+    " ...
+
+
+    filetype plugin indent on " required!
+    "
+    " Brief help
+    " :BundleList - list configured bundles
+    " :BundleInstall(!) - install(update) bundles
+    " :BundleSearch(!) foo - search(or refresh cache first) for foo
+    " :BundleClean(!) - confirm(or auto-approve) removal of unused bundles
+    "
+    " see :h vundle for more details or wiki for FAQ
+    " NOTE: comments after Bundle command are not allowed..
+
+endif
+
+"####################################################################################################################
 " 07. Plugin
 
+"####################################################################################################################
+" 08. Mapping
+nnoremap <F8> :SrcExplToggle<CR>
+nnoremap <F9> :NERDTreeToggle<CR> 
+nnoremap <F10> :TagbarToggle<CR>
+
+:nn <A-a> <C-a>
