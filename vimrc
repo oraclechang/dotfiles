@@ -167,108 +167,130 @@ endif
 
 "####################################################################################################################
 " 06. Bundle
-if has('vundle') 
-
-    filetype off " required!
-
-    "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    "https://github.com/gmarik/vundle/wiki/Vundle-for-Windows
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-
-    " let Vundle manage Vundle
-    " required! 
-    Bundle 'gmarik/vundle'
-
-
-    "------------------------------------------------------------------------------------- 
-    " My Bundles here:   
-    " http://lowid.tistory.com/?page=5 
-    "
-
-    Bundle 'https://github.com/Lokaltog/vim-powerline.git' 
-
-    "Bundle 'c.vim' 
-    " c의 skel을 미리 작성해 줍니다. snipMate랑 같이쓰세요... 간단한건 아래의 박스... 더 많은 단축키는 여기를 참조하세요 
-    " http://lug.fh-swf.de/vim/vim-c/csupport.html
-
-    Bundle 'DoxygenToolkit.vim' 
-
-    "Bundle 'EasyMotion' 
-    " 단어(word)간 이동을 쉽게 합니다, \\w를 눌러보세요 
-
-    Bundle 'ctags.vim'     
-    "http://sosal.tistory.com/11
-
-    "Bundle 'cscope.vim' 
-    "https://github.com/vim-scripts/cscope.vim
-
-    "Bundle 'snipMate' 
-    " 명령어 자동완성 기능입니다. 
-
-    "Bundle 'ShowMarks' 
-    " 왼쪽에 마크를 표시해 줍니다.
-
-    Bundle 'Align' 
-    " 원하는데로 정렬을 지정할 수 있습니다  http://www.drchip.org/astronaut/vim/align.html#Examples
-
-    Bundle 'Tagbar' 
-    " taglist와 비슷한 확장기능인데... 그것보다 좀 더 좋아 보이네요.
-
-    Bundle 'The-NERD-tree' 
-    " 이번에도 디렉토리 이동을 쉽게 할 수 있는 확장기능 입니다.  
-
-    "Bundle 'AutoComplPop' 
-    "단어 자동완성
-
-    Bundle 'a.vim' 
-    "소스의 헤더 전환
-
-    "Bundle 'minibufexpl.vim' 
-    " 버퍼를 보기쉽게 만들어 줍니다
-
-    "Bundle 'https://github.com/fholgado/minibufexpl.vim'
-
-    Bundle 'fholgado/minibufexpl.vim'    
-    "minibufexpl.vim 의 업데이트 버전
-
-    "Bundle 'matchparenpp' 
-    " 괄호 (),[],{}에 커서를 갖다대면, 상대 괄호를 깜박여 줍니다.
-
-    "Bundle 'Solarized'
-
-    Bundle 'Source-Explorer-srcexpl.vim' 
-    "http://neodelicious.tistory.com/242
-
-    Bundle 'airblade/vim-gitgutter'
-    "https://github.com/airblade/vim-gitgutter 
-    "------------------------------------------------------------------------------------- 
-
-    " original repos on github
-    Bundle 'tpope/vim-fugitive'
-    Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-    Bundle 'tpope/vim-rails.git'
-    " vim-scripts repos
-    Bundle 'L9'
-    Bundle 'FuzzyFinder'
-    " non github repos
-    Bundle 'git://git.wincent.com/command-t.git'
-    " ...
-
-
-    filetype plugin indent on " required!
-    "
-    " Brief help
-    " :BundleList - list configured bundles
-    " :BundleInstall(!) - install(update) bundles
-    " :BundleSearch(!) foo - search(or refresh cache first) for foo
-    " :BundleClean(!) - confirm(or auto-approve) removal of unused bundles
-    "
-    " see :h vundle for more details or wiki for FAQ
-    " NOTE: comments after Bundle command are not allowed..
-
+" Setting up Vundle - the vim plugin bundler
+" http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
 endif
+
+filetype off " required!
+
+"git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"https://github.com/gmarik/vundle/wiki/Vundle-for-Windows
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+
+"------------------------------------------------------------------------------------- 
+" My Bundles here:   
+" http://lowid.tistory.com/?page=5 
+"
+
+Bundle 'https://github.com/Lokaltog/vim-powerline.git' 
+
+"Bundle 'c.vim' 
+" c의 skel을 미리 작성해 줍니다. snipMate랑 같이쓰세요... 간단한건 아래의 박스... 더 많은 단축키는 여기를 참조하세요 
+" http://lug.fh-swf.de/vim/vim-c/csupport.html
+
+Bundle 'DoxygenToolkit.vim' 
+
+"Bundle 'EasyMotion' 
+" 단어(word)간 이동을 쉽게 합니다, \\w를 눌러보세요 
+
+Bundle 'ctags.vim'     
+"http://sosal.tistory.com/11
+
+"Bundle 'cscope.vim' 
+"https://github.com/vim-scripts/cscope.vim
+
+"Bundle 'snipMate' 
+" 명령어 자동완성 기능입니다. 
+
+"Bundle 'ShowMarks' 
+" 왼쪽에 마크를 표시해 줍니다.
+
+Bundle 'Align' 
+" 원하는데로 정렬을 지정할 수 있습니다  http://www.drchip.org/astronaut/vim/align.html#Examples
+
+Bundle 'Tagbar' 
+" taglist와 비슷한 확장기능인데... 그것보다 좀 더 좋아 보이네요.
+
+Bundle 'The-NERD-tree' 
+" 이번에도 디렉토리 이동을 쉽게 할 수 있는 확장기능 입니다.  
+
+"Bundle 'AutoComplPop' 
+"단어 자동완성
+
+Bundle 'a.vim' 
+"소스의 헤더 전환
+
+"Bundle 'minibufexpl.vim' 
+" 버퍼를 보기쉽게 만들어 줍니다
+
+"Bundle 'https://github.com/fholgado/minibufexpl.vim'
+
+Bundle 'fholgado/minibufexpl.vim'    
+"minibufexpl.vim 의 업데이트 버전
+
+"Bundle 'matchparenpp' 
+" 괄호 (),[],{}에 커서를 갖다대면, 상대 괄호를 깜박여 줍니다.
+
+"Bundle 'Solarized'
+
+Bundle 'Source-Explorer-srcexpl.vim' 
+"http://neodelicious.tistory.com/242
+
+Bundle 'airblade/vim-gitgutter'
+"https://github.com/airblade/vim-gitgutter 
+
+Bundle 'Syntastic' 
+"uber awesome syntax and errors highlighter
+
+Bundle 'altercation/vim-colors-solarized' 
+
+"------------------------------------------------------------------------------------- 
+
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+" ...
+
+
+filetype plugin indent on " required!
+"
+" Brief help
+" :BundleList - list configured bundles
+" :BundleInstall(!) - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!) - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
+" Setting up Vundle - the vim plugin bundler end
+
 
 "####################################################################################################################
 " 07. Plugin
