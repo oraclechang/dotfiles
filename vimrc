@@ -1,45 +1,31 @@
+"####################################################################################################################
+" 01. general
+"####################################################################################################################
 set nocompatible " be iMproved
-
-" Enable
-color desert
-"colorscheme solarized and set bg=dark or set bg=light
-
-set nu
 set nobackup
 set nowritebackup
 set noswapfile
-
-"set nocompatible
-set autoindent
-set smartindent
-
-set cindent
-"set tabstop=8    "set ts=8            " in vim, help tabstop
-set tabstop=4    "set ts=8            " in vim, help tabstop
-set shiftwidth=4    " set sw = 4
-set softtabstop=4    "set sts=4
-"set noexpandtab    " in vim, help noexpandtab
-set expandtab    
-set showmatch "(=set sm)
-set ruler
-
-" Search option 
-set incsearch 
-set ic
-set hlsearch
-"set virtualedit=all 
-set smartcase 
 set tagbsearch    "Tag 를 이진검색
-
-syntax on 
 set iminsert=0         " 입력 모드로 들어갈 때 항상 영문으로 시작 
 set imsearch=0        " 검색 모드로 들어갈 때 항상 영문으로 시작 
 "set autochdir    " 현재 폴더를 열려진 파일로 자동으로 변경. 다른 모듈과 충돌날 수 도 있음
 set foldmethod=manual    " 폴딩 
 "set paste     " 터미널에서 붙여넣기 시 indent 현상을 방지 할 수 있음. GUI (gvim) 에서는 켜면 안됨. :help paste
 
-" For ctags and taglist   
-"let Tlist_Exit_OnlyWindow = 1     " close Tlist window
+
+
+"####################################################################################################################
+" 02. Events
+"####################################################################################################################
+au BufEnter /* call LoadCscope()
+
+
+
+"####################################################################################################################
+" 03. Theme/Color/Font
+"####################################################################################################################
+color desert
+"colorscheme solarized and set bg=dark or set bg=light
 
 " 한글 깨짐 해결 
 "set fenc=UTF-8 
@@ -66,104 +52,44 @@ set foldmethod=manual    " 폴딩
 "전체화면으로 시작 
 "au GUIEnter  simalt ~x
 
-" Maps
 
-"let g:gitgutter_enabled = 0 
-let g:gitgutter_realtime = 0 
-let g:gitgutter_eager = 0
-
-"tags 
-set tags=$OWN/sys/src/tags 
-
-"cscope    // http://vimdoc.sourceforge.net/htmldoc/if_cscop.html#cscope-options 
-set csprg=/usr/bin/cscope 
-set csto=0    " *cscopetagorder* *csto* . 0 이면 cscope 먼저 사용. 1이면 tag 먼저 사용.  
-set cst    " *cscopetag* *cst* . tag 대신 cstag 를 사용. http://vimdoc.sourceforge.net/htmldoc/if_cscop.html . 반대는 set nocst 
-set nocsverb
-
-"if filereadable("./cscope.out") 
-"   cs add cscope.out 
-"else 
-   "cs add /usr/src/linux/cscope.out 
-"   cs add $OWN/sys/src/cscope.out 
-"endif 
-"set csverb 
-
-"for Autoloading Cscope Database  http://vim.wikia.com/wiki/Autoloading_Cscope_Database   
-function! LoadCscope() 
-  let db = findfile("cscope.out", ".;") 
-  if (!empty(db)) 
-    let path = strpart(db, 0, match(db, "/cscope.out$")) 
-    set nocscopeverbose " suppress 'duplicate connection' error 
-    exe "cs add " . db . " " . path 
-    set cscopeverbose 
-  endif 
-endfunction
-
-au BufEnter /* call LoadCscope()
-
-" http://vim.wikia.com/wiki/Cscope 
-if has('cscope') 
-  set cscopetag 
-  "set cscopeverbose 
-  if has('quickfix') 
-    set cscopequickfix=s-,c-,d-,i-,t-,e- 
-  endif 
-  cnoreabbrev csa cs add 
-  cnoreabbrev csf cs find 
-  cnoreabbrev csk cs kill 
-  cnoreabbrev csr cs reset 
-  cnoreabbrev css cs show 
-  cnoreabbrev csh cs help 
-  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src 
-
-  " Using 'CTRL-spacebar' then a search type makes the vim window 
-  " split horizontally, with search result displayed in 
-  " the new window.
-  nmap <C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR> 
-  nmap <C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR> 
-  nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
-
-  " Hitting CTRL-space *twice* before the search type does a vertical 
-  " split instead of a horizontal one
-  nmap <C-Space><C-Space>s
-  \:vert scs find s <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space><C-Space>g
-  \:vert scs find g <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space><C-Space>c
-  \:vert scs find c <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space><C-Space>t
-  \:vert scs find t <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space><C-Space>e
-  \:vert scs find e <C-R>=expand("<cword>")<CR><CR>
-  nmap <C-Space><C-Space>i
-  \:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-  nmap <C-Space><C-Space>d 
-  \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
-endif
-
-"####################################################################################################################
-" 01. general
-
-"####################################################################################################################
-" 02. Events
-
-"####################################################################################################################
-" 03. Theme/Color
 
 "####################################################################################################################
 " 04. Vim UI
+"####################################################################################################################
+set nu
+set ruler
+set showmatch "(=set sm)
+set incsearch 
+set ic
+set hlsearch
+"set virtualedit=all 
+set smartcase 
+"set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
+
+
 
 "####################################################################################################################
 " 05. Text Formatting/Layout
+"####################################################################################################################
+set autoindent
+set smartindent
+set cindent
+"set tabstop=8    "set ts=8            " in vim, help tabstop
+set tabstop=4    "set ts=8            " in vim, help tabstop
+set shiftwidth=4    " set sw = 4
+set softtabstop=4    "set sts=4
+"set noexpandtab    " in vim, help noexpandtab
+set expandtab    
+"set smarttab
+syntax on 
+
+
 
 "####################################################################################################################
 " 06. Bundle
+"####################################################################################################################
+
 " Setting up Vundle - the vim plugin bundler
 " http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
 let iCanHazVundle=1
@@ -258,6 +184,9 @@ Bundle 'Source-Explorer-srcexpl.vim'
 
 Bundle 'airblade/vim-gitgutter'
 "https://github.com/airblade/vim-gitgutter 
+"let g:gitgutter_enabled = 0 
+let g:gitgutter_realtime = 0 
+let g:gitgutter_eager = 0
 
 Bundle 'Syntastic' 
 "uber awesome syntax and errors highlighter
@@ -298,11 +227,94 @@ endif
 " Setting up Vundle - the vim plugin bundler end
 
 
+
 "####################################################################################################################
 " 07. Plugin
+"####################################################################################################################
+" For ctags and taglist   
+"let Tlist_Exit_OnlyWindow = 1     " close Tlist window
+
+
+"tags 
+set tags=$OWN/sys/src/tags 
+
+"cscope    // http://vimdoc.sourceforge.net/htmldoc/if_cscop.html#cscope-options 
+set csprg=/usr/bin/cscope 
+set csto=0    " *cscopetagorder* *csto* . 0 이면 cscope 먼저 사용. 1이면 tag 먼저 사용.  
+set cst    " *cscopetag* *cst* . tag 대신 cstag 를 사용. http://vimdoc.sourceforge.net/htmldoc/if_cscop.html . 반대는 set nocst 
+set nocsverb
+
+"if filereadable("./cscope.out") 
+"   cs add cscope.out 
+"else 
+   "cs add /usr/src/linux/cscope.out 
+"   cs add $OWN/sys/src/cscope.out 
+"endif 
+"set csverb 
+
+
+"for Autoloading Cscope Database  http://vim.wikia.com/wiki/Autoloading_Cscope_Database   
+function! LoadCscope() 
+  let db = findfile("cscope.out", ".;") 
+  if (!empty(db)) 
+    let path = strpart(db, 0, match(db, "/cscope.out$")) 
+    set nocscopeverbose " suppress 'duplicate connection' error 
+    exe "cs add " . db . " " . path 
+    set cscopeverbose 
+  endif 
+endfunction
+
+
+" http://vim.wikia.com/wiki/Cscope 
+if has('cscope') 
+  set cscopetag 
+  "set cscopeverbose 
+  if has('quickfix') 
+    set cscopequickfix=s-,c-,d-,i-,t-,e- 
+  endif 
+  cnoreabbrev csa cs add 
+  cnoreabbrev csf cs find 
+  cnoreabbrev csk cs kill 
+  cnoreabbrev csr cs reset 
+  cnoreabbrev css cs show 
+  cnoreabbrev csh cs help 
+  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src 
+
+  " Using 'CTRL-spacebar' then a search type makes the vim window 
+  " split horizontally, with search result displayed in 
+  " the new window.
+  nmap <C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR> 
+  nmap <C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR> 
+  nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+  " Hitting CTRL-space *twice* before the search type does a vertical 
+  " split instead of a horizontal one
+  nmap <C-Space><C-Space>s
+  \:vert scs find s <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>g
+  \:vert scs find g <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>c
+  \:vert scs find c <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>t
+  \:vert scs find t <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>e
+  \:vert scs find e <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-Space><C-Space>i
+  \:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+  nmap <C-Space><C-Space>d 
+  \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
+endif
+
+
 
 "####################################################################################################################
 " 08. Mapping
+"####################################################################################################################
 nnoremap <F8> :SrcExplToggle<CR>
 nnoremap <F9> :NERDTreeToggle<CR> 
 nnoremap <F10> :TagbarToggle<CR>
