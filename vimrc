@@ -14,10 +14,12 @@ set autoindent
 set smartindent
 
 set cindent
-set tabstop=8    "set ts=8            " in vim, help tabstop
+"set tabstop=8    "set ts=8            " in vim, help tabstop
+set tabstop=4    "set ts=8            " in vim, help tabstop
 set shiftwidth=4    " set sw = 4
 set softtabstop=4    "set sts=4
-set noexpandtab    " in vim, help noexpandtab
+"set noexpandtab    " in vim, help noexpandtab
+set expandtab    
 set showmatch "(=set sm)
 set ruler
 
@@ -50,11 +52,6 @@ set foldmethod=manual    " 폴딩
 "lang mes en_US 
 "source $VIMRUNTIME/delmenu.vim 
 "source $VIMRUNTIME/menu.vim 
-
-" For powerline
-"language en_US.UTF-8
-let g:Powerline_symbols = 'fancy'
-set laststatus=2
 
 "Font 설정 
 "set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI 
@@ -196,7 +193,16 @@ Bundle 'gmarik/vundle'
 " http://lowid.tistory.com/?page=5 
 "
 
-Bundle 'https://github.com/Lokaltog/vim-powerline.git' 
+"Bundle 'https://github.com/Lokaltog/vim-powerline.git' 
+" For powerline
+"language en_US.UTF-8
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
+
+
+Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+"https://github.com/bling/vim-airline
 
 "Bundle 'c.vim' 
 " c의 skel을 미리 작성해 줍니다. snipMate랑 같이쓰세요... 간단한건 아래의 박스... 더 많은 단축키는 여기를 참조하세요 
@@ -256,7 +262,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'Syntastic' 
 "uber awesome syntax and errors highlighter
 
-Bundle 'altercation/vim-colors-solarized' 
+"Bundle 'altercation/vim-colors-solarized' 
 
 "------------------------------------------------------------------------------------- 
 
