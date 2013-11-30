@@ -27,6 +27,10 @@ fi
 ##############################################################################
 # Enable colors in "ls" command output
 alias ls="ls -Glah"
+alias gst="git status"
+alias gft="git fetch"
+alias gci="git commit"
+alias gco-"git checkout"
 
 ##############################################################################
 # 03. Theme/Colors                                                           #
