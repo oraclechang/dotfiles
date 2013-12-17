@@ -11,6 +11,7 @@ set imsearch=0        " 검색 모드로 들어갈 때 항상 영문으로 시�
 "set autochdir    " 현재 폴더를 열려진 파일로 자동으로 변경. 다른 모듈과 충돌날 수 도 있음
 set foldmethod=manual    " 폴딩 
 "set paste     " 터미널에서 붙여넣기 시 indent 현상을 방지 할 수 있음. GUI (gvim) 에서는 켜면 안됨. :help paste
+set nowrap
 
 
 
@@ -192,6 +193,8 @@ Bundle 'Syntastic'
 "uber awesome syntax and errors highlighter
 
 "Bundle 'altercation/vim-colors-solarized' 
+
+Bundle 'christoomey/vim-tmux-navigator'
 
 "------------------------------------------------------------------------------------- 
 
