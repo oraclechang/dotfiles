@@ -194,7 +194,7 @@ Bundle 'Syntastic'
 
 "Bundle 'altercation/vim-colors-solarized' 
 
-Bundle 'christoomey/vim-tmux-navigator'
+"Bundle 'christoomey/vim-tmux-navigator'
 
 "------------------------------------------------------------------------------------- 
 
