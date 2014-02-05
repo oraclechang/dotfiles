@@ -196,6 +196,9 @@ Bundle 'Syntastic'
 
 "Bundle 'christoomey/vim-tmux-navigator'
 
+Bundle 'ctrlp.vim'
+
+Bundle 'UltiSnips'
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
