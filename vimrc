@@ -199,6 +199,9 @@ Bundle 'Syntastic'
 Bundle 'ctrlp.vim'
 
 "Bundle 'UltiSnips'
+
+Bundle 'ack.vim'
+
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
