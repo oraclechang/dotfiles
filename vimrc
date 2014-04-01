@@ -199,11 +199,31 @@ Bundle 'Syntastic'
 
 Bundle 'ctrlp.vim'
 
-"Bundle 'UltiSnips'
-
 Bundle 'ack.vim'
 
+Bundle 'rking/ag.vim'
+" https://github.com/rking/ag.vim
+
+"Bundle 'UltiSnips'
+
+Bundle 'SirVer/ultisnips'
+"https://github.com/sirver/ultisnips
+
+" Snippets are separated from the engine. Add this if you want them:
+Bundle 'honza/vim-snippets'
+"https://github.com/honza/vim-snippets
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 Bundle 'jellybeans.vim'
+
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
@@ -321,6 +341,10 @@ if has('cscope')
   \:vert scs find d <C-R>=expand("<cword>")<CR><CR>
 endif
 
+
+" For silver searcher and ag.vim
+
+let g:agprg="/usr/local/bin/ag --column"
 
 
 "####################################################################################################################
