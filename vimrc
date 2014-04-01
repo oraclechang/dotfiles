@@ -25,7 +25,8 @@ au BufEnter /* call LoadCscope()
 "####################################################################################################################
 " 03. Theme/Color/Font
 "####################################################################################################################
-color desert
+"color desert
+color jellybeans
 "colorscheme solarized and set bg=dark or set bg=light
 
 " 한글 깨짐 해결 
@@ -202,6 +203,7 @@ Bundle 'ctrlp.vim'
 
 Bundle 'ack.vim'
 
+Bundle 'jellybeans.vim'
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
