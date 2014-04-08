@@ -206,7 +206,7 @@ Bundle 'rking/ag.vim'
 
 "Bundle 'UltiSnips'
 
-Bundle 'SirVer/ultisnips'
+"Bundle 'SirVer/ultisnips'
 "https://github.com/sirver/ultisnips
 
 " Snippets are separated from the engine. Add this if you want them:
@@ -223,6 +223,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 Bundle 'jellybeans.vim'
+highlight WarningMsg ctermfg=15 ctermbg=12 guifg=White guibg=Red gui=NONE
 
 "------------------------------------------------------------------------------------- 
 
