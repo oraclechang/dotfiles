@@ -97,6 +97,10 @@ define pef
     p *((qo_Field*)$arg0)
 end
 
+define pefc
+    p *((qo_Func*)$arg0)
+end
+
 
 
 #########################
