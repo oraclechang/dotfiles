@@ -93,7 +93,7 @@ define pec
 end
 
 
-define pef
+define pefd
     p *((qo_Field*)$arg0)
 end
 
