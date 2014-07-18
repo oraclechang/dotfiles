@@ -107,5 +107,16 @@ end
 # gdb
 #########################
 define subpath
-    set substitute-path /INT2/chuho/DailyBuild/sys/src /INT$arg0/chuho/git$arg1/sys/src
+    set substitute-path /SSD/chuho/DailyBuild/sys/src /INT$arg0/chuho/git$arg1/sys/src
 end
+
+
+define son
+    set scheduler-locking on
+end
+
+
+define soff
+    set scheduler-locking off
+end
+
