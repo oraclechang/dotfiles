@@ -108,6 +108,7 @@ end
 #########################
 define subpath
     set substitute-path /SSD/chuho/DailyBuild/sys/src /INT$arg0/chuho/git$arg1/sys/src
+    show substitute-path
 end
 
 
