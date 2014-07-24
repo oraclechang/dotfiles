@@ -141,7 +141,7 @@ Bundle 'DoxygenToolkit.vim'
 "Bundle 'EasyMotion' 
 " 단어(word)간 이동을 쉽게 합니다, \\w를 눌러보세요 
 
-Bundle 'ctags.vim'     
+"Bundle 'ctags.vim'     
 "http://sosal.tistory.com/11
 
 "Bundle 'cscope.vim' 
@@ -268,7 +268,8 @@ endif
 
 
 "tags 
-set tags=$OWN/sys/src/tags 
+"set tags=$OWN/sys/src/tags 
+set tags=./tags,tags;$HOME  "http://stackoverflow.com/questions/11975316/vim-ctags-tag-not-found
 
 "cscope    // http://vimdoc.sourceforge.net/htmldoc/if_cscop.html#cscope-options 
 set csprg=/usr/bin/cscope 
