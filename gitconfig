@@ -30,6 +30,7 @@
     untracked = cyan
 [core]
     editor = vi
+	excludesfile = ~/.gitignore
 [difftool "p4merge"]        #http://stackoverflow.com/questions/3338126/git-how-to-diff-the-same-file-between-two-different-commits-on-the-same-branch
     tool = p4merge    
 [mergetool]                 #https://gist.github.com/henrik242/1510148
