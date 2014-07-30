@@ -71,7 +71,9 @@ define ppcp
 end
 
 
-
+define ppck
+    p *((qo_Check*)$arg0)
+end
 
 
 
