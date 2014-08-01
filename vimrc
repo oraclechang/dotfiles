@@ -368,8 +368,15 @@ nnoremap <F10> :TagbarToggle<CR>
 "####################################################################################################################
 " 09. functions
 "####################################################################################################################
-function RefineOptStep()
+function! RefineOptStep(option)
     ":%s/TABLE used.*//
     :%s/(selibm.\{-})//
     :%s/address.*$//
+
+    :if a:option == 1
+        :%s/:.*$//
+        :%s/TABLE.*$/TABLE/
+        :%s/PROJECT.*$/PROJECT/
+        :%s/GROUP BY.*$/GROUP BY/
+    :endif
 endfunction
