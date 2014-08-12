@@ -372,6 +372,7 @@ function! RefineOptStep(option)
     ":%s/TABLE used.*//
     :%s/(selibm.\{-})//
     :%s/address.*$//
+    :%s/(opid:\d\{-})//
 
     :if a:option == 1
         :%s/:.*$//
