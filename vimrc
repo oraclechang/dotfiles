@@ -12,6 +12,7 @@ set imsearch=0        " 검색 모드로 들어갈 때 항상 영문으로 시�
 set foldmethod=manual    " 폴딩 
 "set paste     " 터미널에서 붙여넣기 시 indent 현상을 방지 할 수 있음. GUI (gvim) 에서는 켜면 안됨. :help paste
 set nowrap
+set clipboard=exclude:.*    " http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
 
 
 
