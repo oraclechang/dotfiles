@@ -233,7 +233,7 @@ highlight WarningMsg ctermfg=15 ctermbg=12 guifg=White guibg=Red gui=NONE
 
 " original repos on github
 Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
