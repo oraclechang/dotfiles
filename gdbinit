@@ -4,8 +4,8 @@ set listsize 40
 # print http://www.delorie.com/gnu/docs/gdb/gdb_58.html
 #########################
 set print pretty
-set print address off
-set print array on
+#set print address off
+#set print array on
 set print object
 
 handle SIGPIPE nostop noprint

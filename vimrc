@@ -13,6 +13,7 @@ set foldmethod=manual    " 폴딩
 "set paste     " 터미널에서 붙여넣기 시 indent 현상을 방지 할 수 있음. GUI (gvim) 에서는 켜면 안됨. :help paste
 set nowrap
 set clipboard=exclude:.*    " http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
+set backspace=indent,eol,start  " :help 'backspace'. http://stackoverflow.com/questions/11560201/backspace-key-not-working-in-vim-vi
 
 
 
