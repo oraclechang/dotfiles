@@ -14,6 +14,8 @@ set foldmethod=manual    " 폴딩
 set nowrap
 set clipboard=exclude:.*    " http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
 set backspace=indent,eol,start  " :help 'backspace'. http://stackoverflow.com/questions/11560201/backspace-key-not-working-in-vim-vi
+set ttyfast
+set lazyredraw
 
 
 

@@ -14,7 +14,9 @@ handle SIG37 nostop noprint
 #set logging on
 
 define p_
+    set scheduler-locking on
     print $arg0->print_(0)
+    set scheduler-locking off
 end
 
 define pp
