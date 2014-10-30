@@ -64,6 +64,7 @@ color jellybeans
 " 04. Vim UI
 "####################################################################################################################
 set nu
+set relativenumber
 set ruler
 set showmatch "(=set sm)
 set incsearch 
@@ -197,7 +198,7 @@ Bundle 'airblade/vim-gitgutter'
 let g:gitgutter_realtime = 0 
 let g:gitgutter_eager = 0
 
-Bundle 'Syntastic' 
+"Bundle 'Syntastic' 
 "uber awesome syntax and errors highlighter
 
 "Bundle 'altercation/vim-colors-solarized' 
