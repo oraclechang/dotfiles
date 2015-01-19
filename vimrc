@@ -216,7 +216,8 @@ Bundle 'rking/ag.vim'
 
 "Bundle 'UltiSnips'
 
-"Bundle 'SirVer/ultisnips'
+"-----------------------------------------------------------------
+Bundle 'SirVer/ultisnips'
 "https://github.com/sirver/ultisnips
 
 " Snippets are separated from the engine. Add this if you want them:
@@ -225,12 +226,17 @@ Bundle 'honza/vim-snippets'
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsEditSplit="normal"
+"-----------------------------------------------------------------
 
 Bundle 'jellybeans.vim'
 highlight WarningMsg ctermfg=15 ctermbg=12 guifg=White guibg=Red gui=NONE
