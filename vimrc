@@ -241,6 +241,8 @@ let g:UltiSnipsEditSplit="vertical"
 Bundle 'jellybeans.vim'
 highlight WarningMsg ctermfg=15 ctermbg=12 guifg=White guibg=Red gui=NONE
 
+Bundle 'tommcdo/vim-exchange'
+
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
