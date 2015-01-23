@@ -242,6 +242,7 @@ Bundle 'jellybeans.vim'
 highlight WarningMsg ctermfg=15 ctermbg=12 guifg=White guibg=Red gui=NONE
 
 Bundle 'tommcdo/vim-exchange'
+"https://github.com/tommcdo/vim-exchange
 
 "------------------------------------------------------------------------------------- 
 
