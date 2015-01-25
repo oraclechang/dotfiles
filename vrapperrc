@@ -1,0 +1,55 @@
+
+"####################################################################################################################
+" 01. general
+"####################################################################################################################
+set nocompatible " be iMproved
+set nobackup
+set nowritebackup
+set noswapfile
+set tagbsearch    "Tag 를 이진검색
+set iminsert=0         " 입력 모드로 들어갈 때 항상 영문으로 시작 
+set imsearch=0        " 검색 모드로 들어갈 때 항상 영문으로 시작 
+"set autochdir    " 현재 폴더를 열려진 파일로 자동으로 변경. 다른 모듈과 충돌날 수 도 있음
+set foldmethod=manual    " 폴딩 
+"set paste     " 터미널에서 붙여넣기 시 indent 현상을 방지 할 수 있음. GUI (gvim) 에서는 켜면 안됨. :help paste
+set nowrap
+set clipboard=exclude:.*    " http://stackoverflow.com/questions/14635295/vim-takes-a-very-long-time-to-start-up
+set backspace=indent,eol,start  " :help 'backspace'. http://stackoverflow.com/questions/11560201/backspace-key-not-working-in-vim-vi
+set ttyfast
+set lazyredraw
+"if has('mouse')
+"    set mouse=a
+"endif
+
+
+
+"####################################################################################################################
+" 04. Vim UI
+"####################################################################################################################
+set nu
+set relativenumber
+set ruler
+set showmatch "(=set sm)
+set incsearch 
+set ic
+set hlsearch
+"set virtualedit=all 
+set smartcase 
+"set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
+
+
+
+"####################################################################################################################
+" 05. Text Formatting/Layout
+"####################################################################################################################
+set autoindent
+set smartindent
+set cindent
+"set tabstop=8    "set ts=8            " in vim, help tabstop
+set tabstop=4    "set ts=8            " in vim, help tabstop
+set shiftwidth=4    " set sw = 4
+set softtabstop=4    "set sts=4
+"set noexpandtab    " in vim, help noexpandtab
+set expandtab    
+"set smarttab
+syntax on 

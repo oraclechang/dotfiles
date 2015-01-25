@@ -185,6 +185,7 @@ Bundle 'a.vim'
 
 Bundle 'fholgado/minibufexpl.vim'    
 "minibufexpl.vim 의 업데이트 버전
+"let g:miniBufExplBRSplit = 1
 
 "Bundle 'matchparenpp' 
 " 괄호 (),[],{}에 커서를 갖다대면, 상대 괄호를 깜박여 줍니다.
@@ -229,9 +230,9 @@ Bundle 'honza/vim-snippets'
 "let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
