@@ -66,7 +66,9 @@ color jellybeans
 " 04. Vim UI
 "####################################################################################################################
 set nu
-set relativenumber
+if exists('+relativenumber') || (v:version >= 704)
+    set relativenumber
+endif
 set ruler
 set showmatch "(=set sm)
 set incsearch 
