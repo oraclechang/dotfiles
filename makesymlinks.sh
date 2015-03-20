@@ -33,5 +33,6 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+make -p "$colorSchemeDestDir"
 cp "$colorSchemeSrcDir""jellybeans.vim" "$colorSchemeDestDir"
 
