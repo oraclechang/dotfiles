@@ -1,5 +1,7 @@
 set listsize 40
 
+#add-auto-load-safe-path /cnfs/DEV_TOOL/sapmnt/appl_sw/gcc47-4.7.2_20130108-0.15.45.sap20140516/lib64/gcc/x86_64-suse-linux/4.7/libstdc++.so.6.0.17-gdb.py
+
 #########################
 # print http://www.delorie.com/gnu/docs/gdb/gdb_58.html
 #########################
@@ -14,13 +16,25 @@ handle SIG37 nostop noprint
 #set logging on
 
 define p_
-    set scheduler-locking on
+#set scheduler-locking on
     print $arg0->print_(0)
-    set scheduler-locking off
+#set scheduler-locking off
 end
 
 define pp
     print *$arg0
+end
+
+define plo
+    print $arg0->print_logical(0)
+end
+
+define ppy
+    print $arg0->print_physical(0)
+end
+
+define ptrc
+    print qo_Tracer::print_($arg0)
 end
 
 #########################
