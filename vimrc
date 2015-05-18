@@ -205,6 +205,14 @@ let g:gitgutter_eager = 0
 
 "Bundle 'Syntastic' 
 "uber awesome syntax and errors highlighter
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 "Bundle 'altercation/vim-colors-solarized' 
 
@@ -247,6 +255,9 @@ highlight WarningMsg ctermfg=15 ctermbg=12 guifg=White guibg=Red gui=NONE
 Bundle 'tommcdo/vim-exchange'
 "https://github.com/tommcdo/vim-exchange
 
+"Bundle 'zhaocai/GoldenView.Vim'
+"http://zhaocai.github.io/GoldenView.Vim/
+"
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
@@ -399,4 +410,9 @@ function! RefineOptStep(option)
         :%s/PROJECT.*$/PROJECT/
         :%s/GROUP BY.*$/GROUP BY/
     :endif
+endfunction
+
+function! Nonum()
+    :set nonu
+    :set relativenumber!
 endfunction
