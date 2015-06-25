@@ -9,11 +9,16 @@ set print pretty
 #set print address off
 #set print array on
 set print object
+set auto-solib-add 0
 
 handle SIGPIPE nostop noprint
 handle SIG37 nostop noprint
 #set trace-commands on
 #set logging on
+
+define loadhdb
+    shar hdbrskernel
+end
 
 define p_
 #set scheduler-locking on
