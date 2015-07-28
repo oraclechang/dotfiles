@@ -17,7 +17,10 @@ handle SIG37 nostop noprint
 #set logging on
 
 define loadhdb
-    shar hdbrskernel
+    shar libhdbrskernel
+    shar libhdbcsapi
+    shar libhdbbasis
+    shar libhdbcswrapper.so
 end
 
 define p_
