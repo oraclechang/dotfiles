@@ -21,6 +21,8 @@ define loadhdb
     shar libhdbcsapi
     shar libhdbbasis
     shar libhdbcswrapper.so
+    shar libhdbbasement.so
+    shar libhdblttbase.so
 end
 
 define p_
