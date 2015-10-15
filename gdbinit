@@ -23,6 +23,8 @@ define loadhdb
     shar libhdbcswrapper.so
     shar libhdbbasement.so
     shar libhdblttbase.so
+    shar libhdbcsmd.so
+    shar libhdbcscommon.so
 end
 
 define p_
@@ -45,6 +47,10 @@ end
 
 define ptrc
     print qo_Tracer::print_($arg0)
+end
+
+define pstr
+    print $arg0.c_str()
 end
 
 #########################
