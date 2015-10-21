@@ -103,7 +103,13 @@ python
  
 import sys
 #sys.path = ['SAPDevelop/HDB/git/gen/dbg/python_runtime/support/Python/lib/python2.6', '/SAPDevelop/HDB/git/sys/src/gdb_python'] + sys.path
-#sys.path = ['/usr/lib64/python', '/usr/lib64/python/lib-dynload'] + sys.path
+sys.path = ['/INT1/chuho/git0/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT1/chuho/git0/sys/src/gdb_python'] + sys.path
+sys.path = ['/INT1/chuho/git1/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT1/chuho/git1/sys/src/gdb_python'] + sys.path
+sys.path = ['/INT1/chuho/git2/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT1/chuho/git2/sys/src/gdb_python'] + sys.path
+sys.path = ['/INT2/chuho/git3/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT2/chuho/git3/sys/src/gdb_python'] + sys.path
+sys.path = ['/INT2/chuho/git4/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT2/chuho/git4/sys/src/gdb_python'] + sys.path
+sys.path = ['/INT2/chuho/git5/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT2/chuho/git5/sys/src/gdb_python'] + sys.path
+sys.path = ['/usr/lib64/python', '/usr/lib64/python/lib-dynload'] + sys.path
 import os
 import encodings
  
