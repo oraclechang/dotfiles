@@ -56,35 +56,6 @@ end
 #########################
 # relations
 #########################
-define rs
-    p (qo_Select*)$arg0
-end
-
-define prs
-    p *((qo_Select*)$arg0)
-end
-
-
-define prt
-    p *((qo_Table*)$arg0)
-end
-
-define prp
-    p *((qo_Project*)$arg0)
-end
-
-define prg
-    p *((qo_GroupBy*)$arg0)
-end
-
-define pru
-    p *((qo_UnionAll*)$arg0)
-end
-
-define prj
-    p *((qo_Join*)$arg0)
-end
-
 define prl
     p $arg0->left_rel
 end
@@ -92,31 +63,6 @@ end
 define prr
     p $arg0->right_rel
 end
-
-
-#########################
-# predicates
-#########################
-define ppd
-    p *((qo_Disj*)$arg0)
-end
-
-
-define ppcj
-    p *((qo_Conj*)$arg0)
-end
-
-define ppcp
-    p *((qo_Comp*)$arg0)
-end
-
-
-define ppck
-    p *((qo_Check*)$arg0)
-end
-
-
-
 
 
 #########################
@@ -129,20 +75,6 @@ end
 define pr
     p $arg0->right_exp
 end
-
-define pec
-    p *((qo_Const*)$arg0)
-end
-
-
-define pefd
-    p *((qo_Field*)$arg0)
-end
-
-define pefc
-    p *((qo_Func*)$arg0)
-end
-
 
 
 #########################
@@ -163,3 +95,19 @@ define soff
     set scheduler-locking off
 end
 
+
+#########################
+# python
+#########################
+python
+ 
+import sys
+#sys.path = ['SAPDevelop/HDB/git/gen/dbg/python_runtime/support/Python/lib/python2.6', '/SAPDevelop/HDB/git/sys/src/gdb_python'] + sys.path
+#sys.path = ['/usr/lib64/python', '/usr/lib64/python/lib-dynload'] + sys.path
+import os
+import encodings
+ 
+# sys.path.insert(0, os.environ["SRC"] + '/gdb_python')
+import PrettyPrinters
+ 
+end
