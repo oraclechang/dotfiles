@@ -385,9 +385,9 @@ let g:agprg="/usr/local/bin/ag --column"
 "####################################################################################################################
 " 08. Mapping
 "####################################################################################################################
-nnoremap <F8> :SrcExplToggle<CR>
+"nnoremap <F8> :SrcExplToggle<CR>
+nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F9> :NERDTreeToggle<CR> 
-nnoremap <F10> :TagbarToggle<CR>
 
 :nn <A-a> <C-a>
 
