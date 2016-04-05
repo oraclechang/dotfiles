@@ -379,7 +379,7 @@ endif
 
 " For silver searcher and ag.vim
 
-let g:agprg="/usr/local/bin/ag --column"
+let g:ag_prg="/usr/local/bin/ag --column"
 
 
 "####################################################################################################################
