@@ -258,6 +258,16 @@ Bundle 'tommcdo/vim-exchange'
 "Bundle 'zhaocai/GoldenView.Vim'
 "http://zhaocai.github.io/GoldenView.Vim/
 "
+
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+"https://github.com/mattn/gist-vim
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_show_privates = 1
+"let g:gist_post_private = 1
+let g:gist_api_url = 'https://github.wdf.sap.corp/api/v3'
+
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
