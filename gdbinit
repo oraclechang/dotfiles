@@ -17,6 +17,7 @@ handle SIG37 nostop noprint
 #set logging on
 
 define loadhdb
+    shar libhdbsqloptimizer
     shar libhdbrskernel
     shar libhdbcsapi
     shar libhdbbasis
@@ -103,17 +104,23 @@ python
  
 import sys
 #sys.path = ['SAPDevelop/HDB/git/gen/dbg/python_runtime/support/Python/lib/python2.6', '/SAPDevelop/HDB/git/sys/src/gdb_python'] + sys.path
-sys.path = ['/INT1/chuho/git0/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT1/chuho/git0/sys/src/gdb_python'] + sys.path
-sys.path = ['/INT1/chuho/git1/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT1/chuho/git1/sys/src/gdb_python'] + sys.path
-sys.path = ['/INT1/chuho/git2/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT1/chuho/git2/sys/src/gdb_python'] + sys.path
-sys.path = ['/INT2/chuho/git3/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT2/chuho/git3/sys/src/gdb_python'] + sys.path
-sys.path = ['/INT2/chuho/git4/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT2/chuho/git4/sys/src/gdb_python'] + sys.path
-sys.path = ['/INT2/chuho/git5/sys/src/build/ClDebug/gen/python_runtime/support/Python/lib/python2.7', '/INT2/chuho/git5/sys/src/gdb_python'] + sys.path
+sys.path = ['/INT1/chuho/hana0/build/Optimized/gen/python_runtime/support/Python/lib/python2.7', '/INT1/chuho/hana0/gdb_python'] + sys.path
+sys.path = ['/INT1/chuho/hana1/build/Optimized/gen/python_runtime/support/Python/lib/python2.7', '/INT1/chuho/hana1/gdb_python'] + sys.path
+sys.path = ['/INT2/chuho/hana2/build/Optimized/gen/python_runtime/support/Python/lib/python2.7', '/INT2/chuho/hana2/gdb_python'] + sys.path
+sys.path = ['/INT2/chuho/hana3/build/Optimized/gen/python_runtime/support/Python/lib/python2.7', '/INT2/chuho/hana3/gdb_python'] + sys.path
+sys.path = ['/iodrive/chuho/hana4/build/Optimized/gen/python_runtime/support/Python/lib/python2.7', '/iodrive/chuho/hana4/gdb_python'] + sys.path
+sys.path = ['/iodrive/chuho/hana5/build/Optimized/gen/python_runtime/support/Python/lib/python2.7', '/iodrive/chuho/hana5/gdb_python'] + sys.path
 sys.path = ['/usr/lib64/python', '/usr/lib64/python/lib-dynload'] + sys.path
+
 import os
 import encodings
  
 # sys.path.insert(0, os.environ["SRC"] + '/gdb_python')
 import PrettyPrinters
- 
+
+try:
+    import GTestSupport
+except:
+    pass # some features only supported in new gdb versions
+
 end
