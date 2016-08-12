@@ -268,6 +268,7 @@ let g:gist_show_privates = 1
 "let g:gist_post_private = 1
 let g:gist_api_url = 'https://github.wdf.sap.corp/api/v3'
 
+Bundle 'ZoomWin'
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
