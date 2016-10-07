@@ -143,6 +143,8 @@ set laststatus=2
 Bundle 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
 "https://github.com/bling/vim-airline
+let g:airline#extensions#tagbar#enabled = 0
+"https://github.com/vim-airline/vim-airline/issues/601
 
 "Bundle 'c.vim' 
 " c의 skel을 미리 작성해 줍니다. snipMate랑 같이쓰세요... 간단한건 아래의 박스... 더 많은 단축키는 여기를 참조하세요 
