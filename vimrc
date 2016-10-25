@@ -247,7 +247,7 @@ Bundle 'rking/ag.vim'
 "Bundle 'UltiSnips'
 
 "-----------------------------------------------------------------
-Bundle 'SirVer/ultisnips'
+"Bundle 'SirVer/ultisnips'
 "https://github.com/sirver/ultisnips
 
 " Snippets are separated from the engine. Add this if you want them:
@@ -264,7 +264,7 @@ Bundle 'honza/vim-snippets'
 "let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsEditSplit="vertical"
 "let g:UltiSnipsEditSplit="normal"
 "-----------------------------------------------------------------
 
