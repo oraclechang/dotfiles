@@ -288,6 +288,8 @@ let g:gist_show_privates = 1
 let g:gist_api_url = 'https://github.wdf.sap.corp/api/v3'
 
 Bundle 'ZoomWin'
+
+Bundle 'https://github.com/tpope/vim-dispatch.git'
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
@@ -416,6 +418,7 @@ let g:ag_prg="/usr/local/bin/ag --column"
 " 08. Mapping
 "####################################################################################################################
 "nnoremap <F8> :SrcExplToggle<CR>
+nnoremap <F5> :Dispatch hdbcc hm b -b Optimized -j 150 all_core<CR>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F9> :NERDTreeToggle<CR> 
 
