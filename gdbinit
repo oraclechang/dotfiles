@@ -18,6 +18,7 @@ handle SIG37 nostop noprint
 
 define loadhdb
     shar libhdbsqloptimizer
+    shar libhdbsqloptimizerapi
     shar libhdbrskernel
     shar libhdbcsapi
     shar libhdbbasis
