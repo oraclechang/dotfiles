@@ -235,14 +235,32 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "  \ 'file': '\v\.(exe|so|dll)$',
 "  \ 'link': 'some_bad_symbolic_links',
 "  \ }
-let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 "let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 "let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+"let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
+"https://www.reddit.com/r/vim/comments/2yg5ss/has_your_ctrlp_gotten_slow_change_the_indexer_and/
 
 Bundle 'ack.vim'
 
 Bundle 'rking/ag.vim'
 " https://github.com/rking/ag.vim
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  "let g:ctrlp_use_caching = 0
+endif
+"https://robots.thoughtbot.com/faster-grepping-in-vim
+
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
 "Bundle 'UltiSnips'
 
@@ -421,6 +439,11 @@ let g:ag_prg="/usr/local/bin/ag --column"
 nnoremap <F5> :Dispatch hdbcc hm b -b Optimized -j 150 all_core<CR>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F9> :NERDTreeToggle<CR> 
+
+" bind K to grep word under cursor
+nnoremap \ :Ag<SPACE>
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"https://robots.thoughtbot.com/faster-grepping-in-vim
 
 :nn <A-a> <C-a>
 
