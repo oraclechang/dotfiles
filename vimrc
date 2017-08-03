@@ -172,6 +172,7 @@ Bundle 'Align'
 
 Bundle 'Tagbar' 
 " taglist와 비슷한 확장기능인데... 그것보다 좀 더 좋아 보이네요.
+let g:tagbar_ctags_bin='/usr/bin/ctags'
 
 Bundle 'The-NERD-tree' 
 " 이번에도 디렉토리 이동을 쉽게 할 수 있는 확장기능 입니다.  
@@ -260,7 +261,7 @@ endif
 "https://robots.thoughtbot.com/faster-grepping-in-vim
 
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command -nargs=+ -complete=file -bar Ag -i silent! grep! <args>|cwindow|redraw!
 
 "Bundle 'UltiSnips'
 
@@ -308,6 +309,11 @@ let g:gist_api_url = 'https://github.wdf.sap.corp/api/v3'
 Bundle 'ZoomWin'
 
 Bundle 'https://github.com/tpope/vim-dispatch.git'
+
+Bundle 'https://github.com/rhysd/vim-clang-format.git'
+"https://github.com/rhysd/vim-clang-format
+
+
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
