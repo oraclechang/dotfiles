@@ -447,7 +447,7 @@ nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F9> :NERDTreeToggle<CR> 
 
 " bind K to grep word under cursor
-nnoremap \ :Ag<SPACE>
+"nnoremap \ :Ag<SPACE>
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 "https://robots.thoughtbot.com/faster-grepping-in-vim
 
