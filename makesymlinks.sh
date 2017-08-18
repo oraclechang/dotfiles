@@ -13,6 +13,8 @@ colorSchemeDestDir=~/.vim/colors/
 #files="bashrc vimrc vim zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
 files="gitconfig gitignore tmux.conf vimrc gvimrc gdbinit ackrc vrapperrc"    # list of files/folders to symlink in homedir
 
+fish_src_dir=~/dotfiles/fish/functions
+fish_dest_dir=~/.config/fish/
 ##########
 
 # create dotfiles_old in homedir
@@ -35,4 +37,8 @@ done
 
 mkdir -p "$colorSchemeDestDir"
 cp "$colorSchemeSrcDir""jellybeans.vim" "$colorSchemeDestDir"
+
+echo "Copy fish functions"
+mkdir -p "$fish_dest_dir"
+cp -R "$fish_src_dir" "$fish_dest_dir"
 
