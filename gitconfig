@@ -7,8 +7,8 @@
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     lg = !"git lg1"
     lp = "!p() { git log --pretty=format:'%h - %an, %ar : %s' $1; }; p"    #http://stackoverflow.com/questions/3321492/git-alias-with-positional-parameters-git-foo-aaa-bbb-ccc-foo-aaa-bar-bbb
-    wdf = "remote set-url origin git://hdbgerrit.wdf.sap.corp/newdb"
-    icn = "remote set-url origin git://infra2.icnl.sap.corp/newdb"
+    #wdf = "remote set-url origin git://hdbgerrit.wdf.sap.corp/newdb"
+    #icn = "remote set-url origin git://infra2.icnl.sap.corp/newdb"
 [color]
     diff = auto
     interactive = auto
@@ -32,16 +32,20 @@
     editor = vi
 	excludesfile = ~/.gitignore
 	autocrlf = input
-[difftool "p4merge"]        #http://stackoverflow.com/questions/3338126/git-how-to-diff-the-same-file-between-two-different-commits-on-the-same-branch
-    tool = p4merge    
-[mergetool]                 #https://gist.github.com/henrik242/1510148
-    prompt = false
-    keepBackup = false
-[merge]
-    tool = p4merge
-[mergetool "p4merge"]
-    path = /usr/local/bin/p4merge
+#[difftool "p4merge"]        #http://stackoverflow.com/questions/3338126/git-how-to-diff-the-same-file-between-two-different-commits-on-the-same-branch
+#    tool = p4merge    
+#[mergetool]                 #https://gist.github.com/henrik242/1510148
+#    prompt = false
+#    keepBackup = false
+#[merge]
+#    tool = p4merge
+#[mergetool "p4merge"]
+#    path = /usr/local/bin/p4merge
 [user]
     name = Chuho Chang
     #email = oraclechang@gmail.com
 	email = chuho.chang@sap.com
+[github]
+	user = chuho.chang@sap.com
+[rerere]
+	enabled = true
