@@ -263,6 +263,14 @@ endif
 " bind \ (backward slash) to grep shortcut
 command -nargs=+ -complete=file -bar Ag -i silent! grep! <args>|cwindow|redraw!
 
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  "let g:ctrlp_use_caching = 0
+endif
+" https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim/
+
+
 "Bundle 'UltiSnips'
 
 "-----------------------------------------------------------------
@@ -453,8 +461,12 @@ nnoremap <F9> :NERDTreeToggle<CR>
 
 " bind K to grep word under cursor
 "nnoremap \ :Ag<SPACE>
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 "https://robots.thoughtbot.com/faster-grepping-in-vim
+
+"nnoremap K :silent grep! "\b\s?<C-R><C-W>\b"<CR>:cw<CR>:redr!<CR>
+nnoremap K :grep! "\b\s?<C-R><C-W>\b"<CR>:cw<CR>
+"https://vi.stackexchange.com/questions/3163/how-to-setup-ag-the-silver-searcher-in-vim
 
 :nn <A-a> <C-a>
 
