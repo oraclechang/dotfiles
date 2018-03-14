@@ -337,6 +337,8 @@ let g:rg_highlight = 1
 "Plugin 'w0rp/ale'
 
 "Bundle 'https://github.com/maralla/validator.vim.git'
+
+Plugin 'unimpaired.vim'
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
