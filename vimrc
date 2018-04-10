@@ -214,7 +214,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy', 'cppcheck', 'gcc']
@@ -467,9 +467,9 @@ let g:ag_prg="/usr/local/bin/ag --column"
 " 08. Mapping
 "####################################################################################################################
 "nnoremap <F8> :SrcExplToggle<CR>
-nnoremap <F5> :Dispatch hdbcc hm b -b Optimized -j 150 all_core<CR>
+nnoremap <F5> :Dispatch hdbcc hm b -b MyOptimized -j 150 all_core<CR>
+nnoremap <F7> :NERDTreeToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
-nnoremap <F9> :NERDTreeToggle<CR> 
 
 " bind K to grep word under cursor
 "nnoremap \ :Ag<SPACE>
