@@ -27,6 +27,8 @@ define loadhdb
     shar libhdblttbase.so
     shar libhdbcsmd.so
     shar libhdbcscommon.so
+    shar libhdbhex.so
+    shar libhdbqohex.so
 end
 
 define p_
