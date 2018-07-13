@@ -339,6 +339,8 @@ let g:rg_highlight = 1
 "Bundle 'https://github.com/maralla/validator.vim.git'
 
 Plugin 'unimpaired.vim'
+
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
@@ -468,6 +470,7 @@ let g:ag_prg="/usr/local/bin/ag --column"
 "####################################################################################################################
 "nnoremap <F8> :SrcExplToggle<CR>
 nnoremap <F5> :Dispatch hdbcc hm b -b MyOptimized -j 150 all_core<CR>
+nnoremap <F6> :YcmCompleter FixIt<CR>
 nnoremap <F7> :NERDTreeToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
 
