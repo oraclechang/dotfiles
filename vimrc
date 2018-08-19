@@ -356,6 +356,8 @@ let g:rg_highlight = 1
 Plugin 'unimpaired.vim'
 
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
