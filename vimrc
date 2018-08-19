@@ -98,7 +98,8 @@ syntax on
 autocmd Filetype cpp match Error /\s\+$/    " http://www.guyrutenberg.com/2013/12/07/highlight-whitespace-at-end-of-line-in-vim/
 autocmd Filetype python match Error /\s\+$/
 
-
+autocmd VimResized * :wincmd =
+"https://vimrcfu.com/snippet/186
 
 "####################################################################################################################
 " 06. Bundle
