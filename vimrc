@@ -359,6 +359,9 @@ Plugin 'unimpaired.vim'
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+Bundle 'https://github.com/matze/vim-move.git'
+let g:move_key_modifier = 'C'
+
 "------------------------------------------------------------------------------------- 
 
 " original repos on github
