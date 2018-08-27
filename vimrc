@@ -340,6 +340,9 @@ let g:gist_api_url = 'https://github.wdf.sap.corp/api/v3'
 Bundle 'ZoomWin'
 
 Bundle 'https://github.com/tpope/vim-dispatch.git'
+if has('mac') "https://superuser.com/questions/194715/how-to-make-vim-settings-computer-dependent-in-vimrc
+    set shell=/bin/bash "On Mac, fish is default shell and Dispatch has a problem with it
+endif
 
 Bundle 'https://github.com/rhysd/vim-clang-format.git'
 "https://github.com/rhysd/vim-clang-format
