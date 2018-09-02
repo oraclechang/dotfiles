@@ -492,11 +492,16 @@ let g:ag_prg="/usr/local/bin/ag --column"
 "####################################################################################################################
 " 08. Mapping
 "####################################################################################################################
-"nnoremap <F8> :SrcExplToggle<CR>
-nnoremap <F5> :Dispatch hdbcc hm b -b MyOptimized -j 150 all_core<CR>
+nnoremap <F4> :ClangFormat<CR>
+if has('mac') "https://superuser.com/questions/194715/how-to-make-vim-settings-computer-dependent-in-vimrc
+    nnoremap <F5> :Make!<CR>
+else
+    nnoremap <F5> :Dispatch hdbcc hm b -b MyOptimized -j 700 all_core<CR>
+endif
 nnoremap <F6> :YcmCompleter FixIt<CR>
 nnoremap <F7> :NERDTreeToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
+"nnoremap <F8> :SrcExplToggle<CR>
 
 " bind K to grep word under cursor
 "nnoremap \ :Ag<SPACE>
