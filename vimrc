@@ -230,15 +230,15 @@ let g:gitgutter_eager = 0
 "Bundle 'christoomey/vim-tmux-navigator'
 
 "Bundle 'ctrlp.vim'
-Bundle 'https://github.com/ctrlpvim/ctrlp.vim.git'
+"Bundle 'https://github.com/ctrlpvim/ctrlp.vim.git'
 " https://github.com/ctrlpvim/ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP .'
-let g:ctrlp_working_path_mode = 'ra'
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP .'
+"let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "let g:ctrlp_custom_ignore += {
 "  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
 "  \ 'file': '\v\.(exe|so|dll)$',
@@ -261,7 +261,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   "let g:ctrlp_use_caching = 0
@@ -273,8 +273,9 @@ command -nargs=+ -complete=file -bar Ag -i silent! grep! <args>|cwindow|redraw!
 
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  "let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   "let g:ctrlp_use_caching = 0
+  let g:FZF_DEFAULT_COMMAND = 'rg --files --no-ignore-vcs --hidden'
 endif
 " https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim/
 
@@ -366,6 +367,10 @@ Bundle 'https://github.com/matze/vim-move.git'
 let g:move_key_modifier = 'C'
 
 Plugin 'scrooloose/nerdcommenter'
+
+Bundle 'https://github.com/junegunn/fzf.vim'
+" https://medium.com/@sidneyliebrand/how-fzf-and-ripgrep-improved-my-workflow-61c7ca212861
+
 
 "------------------------------------------------------------------------------------- 
 
@@ -491,6 +496,9 @@ endif
 let g:ag_prg="/usr/local/bin/ag --column"
 
 
+"fzf
+set rtp+=/usr/local/opt/fzf
+
 "####################################################################################################################
 " 08. Mapping
 "####################################################################################################################
@@ -513,6 +521,8 @@ nnoremap <F8> :TagbarToggle<CR>
 "nnoremap K :silent grep! "\b\s?<C-R><C-W>\b"<CR>:cw<CR>:redr!<CR>
 nnoremap K :grep! "\b\s?<C-R><C-W>\b"<CR>:cw<CR>
 "https://vi.stackexchange.com/questions/3163/how-to-setup-ag-the-silver-searcher-in-vim
+
+nnoremap <C-p> :Files<Cr>
 
 :nn <A-a> <C-a>
 
