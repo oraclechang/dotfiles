@@ -207,23 +207,23 @@ Bundle 'airblade/vim-gitgutter'
 let g:gitgutter_realtime = 0 
 let g:gitgutter_eager = 0
 
-Bundle 'Syntastic'
+"Bundle 'Syntastic'
 "uber awesome syntax and errors highlighter
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy', 'cppcheck', 'gcc']
-let g:syntastic_enable_signs=1
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_remove_include_errors = 1
-let g:syntastic_cpp_clang_check_args="-I."
-let g:syntastic_cpp_clang_tidy_args="-I."
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_aggregate_errors = 1
+"let g:syntastic_cpp_checkers = ['clang_check', 'clang_tidy', 'cppcheck', 'gcc']
+"let g:syntastic_enable_signs=1
+"let g:syntastic_cpp_check_header = 1
+"let g:syntastic_cpp_remove_include_errors = 1
+"let g:syntastic_cpp_clang_check_args="-I."
+"let g:syntastic_cpp_clang_tidy_args="-I."
 
 "Bundle 'altercation/vim-colors-solarized' 
 
