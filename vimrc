@@ -502,9 +502,15 @@ set rtp+=/usr/local/opt/fzf
 "####################################################################################################################
 " 08. Mapping
 "####################################################################################################################
+nnoremap <F3> :GitGutterToggle<CR>:call Nonum()<CR>
 nnoremap <F4> :ClangFormat<CR>
 if has('mac') "https://superuser.com/questions/194715/how-to-make-vim-settings-computer-dependent-in-vimrc
-    nnoremap <F5> :Make!<CR>
+    "nnoremap <F5> :Make!<CR>
+    "nnoremap <F5> :Dispatch! ninja<CR>
+    nnoremap <F5> :ClangFormat<CR>:w<CR>:!ninja<CR>
+    "nnoremap <F5> :execute 'silent !ninja&'<CR> | redraw!
+    "nnoremap <F5> :set makeprg=ninja<CR>:make<CR>:copen<CR>
+    "nnoremap <F5> :set makeprg=ninja<CR>:make<CR>
 else
     nnoremap <F5> :Dispatch hdbcc hm b -b MyOptimized -j 700 all_core<CR>
 endif
