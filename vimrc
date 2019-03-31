@@ -32,7 +32,7 @@ au BufEnter /* call LoadCscope()
 " 03. Theme/Color/Font
 "####################################################################################################################
 "color desert
-color jellybeans
+"color jellybeans
 "colorscheme solarized and set bg=dark or set bg=light
 
 " 한글 깨짐 해결 
@@ -378,6 +378,10 @@ Plugin 'scrooloose/nerdcommenter'
 Bundle 'https://github.com/junegunn/fzf.vim'
 " https://medium.com/@sidneyliebrand/how-fzf-and-ripgrep-improved-my-workflow-61c7ca212861
 
+Plugin 'tomasiser/vim-code-dark'
+" https://github.com/tomasiser/vim-code-dark
+colorscheme codedark
+let g:airline_theme = 'codedark'
 
 "------------------------------------------------------------------------------------- 
 
