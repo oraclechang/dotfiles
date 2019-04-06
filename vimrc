@@ -32,7 +32,8 @@ au BufEnter /* call LoadCscope()
 " 03. Theme/Color/Font
 "####################################################################################################################
 "color desert
-"color jellybeans
+color jellybeans
+let g:airline_theme = 'jellybeans'
 "colorscheme solarized and set bg=dark or set bg=light
 
 " 한글 깨짐 해결 
@@ -383,8 +384,8 @@ Bundle 'https://github.com/junegunn/fzf.vim'
 
 Plugin 'tomasiser/vim-code-dark'
 " https://github.com/tomasiser/vim-code-dark
-colorscheme codedark
-let g:airline_theme = 'codedark'
+"colorscheme codedark
+"let g:airline_theme = 'codedark'
 
 "------------------------------------------------------------------------------------- 
 
