@@ -1,0 +1,84 @@
+# This is a basic configuration example for SpaceVim
+
+# All SpaceVim options are below [options] snippet
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer, the value of this option is a string.
+    #colorscheme = "gruvbox"
+    #colorscheme = "jellybeans"
+    #colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors, the type of the value is boolean, true or false.
+    enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "nil"
+    statusline_separator = "bar"
+    buffer_index_type = 4
+    # Display file type icon on the tabline, If you do not have nerd fonts
+    # installed, please change the value to false
+    enable_tabline_filetype_icon = true
+    # Display current mode text on statusline, by default It is disabled,
+    # only color will be changed when switch modes.
+    enable_statusline_mode = false
+    default_indent = 4
+    #expend_tab = false
+    #guifont = "Iosevka:h11"
+
+    windows_leader = "m"
+    enable_language_specific_leader = false
+    windows_smartclose = ""
+
+    bootstrap_before = "myspacevim#before"
+    bootstrap_after = "myspacevim#after"
+
+    project_rooter_automatically = 0    # https://github.com/SpaceVim/SpaceVim/issues/2354
+
+# Enable autocomplete layer
+[[layers]]
+    name = "autocomplete"
+    auto-completion-return-key-behavior = "complete"
+    auto-completion-tab-key-behavior = "cycle"
+
+[[layers]]
+    name = "shell"
+    default_position = "top"
+    default_height = 30
+
+[[layers]]
+    name = "fzf"
+
+[[layers]]
+    name = "colorscheme"
+    random_theme = true
+    #frequency = "daily"
+    frequency = "hourly"
+
+[[layers]]
+    name = "lang#c"
+    enable_clang_syntax_highlight = true
+    clang_executable = "/usr/bin/clang"
+    [layer.clang_std]
+        cpp = "c++17"
+
+[[layers]]
+    name = "lang#python"
+
+[[layers]] # not loaded
+    name = "language-server-protocol"
+
+[[layers]]
+    name = "VersionControl"
+
+#[[layers]]
+#name = "unite"
+
+# This is an example for adding custom plugins lilydjwg/colorizer
+[[custom_plugins]]
+    #name = "lilydjwg/colorizer"
+    #merged = false
+    name = "tpope/vim-fugitive"
+    name = "jremmen/vim-ripgrep"
+    name = "rhysd/vim-clang-format"
+

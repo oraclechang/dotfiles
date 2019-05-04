@@ -48,3 +48,7 @@ cp -R "$fish_src_dir" "$fish_dest_dir"
 echo "Copy UltiSnips scripts"
 mkdir -p "$ultisnips_dest_dir"
 cp -R "$ultisnips_src_dir" "$ultisnips_dest_dir"
+
+echo "Link SpaceVim"
+ln -s ~/dotfiles/SpaceVim.d ~/.SpaceVim.d
+
