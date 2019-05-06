@@ -6,7 +6,7 @@
     # if you want to use more colorscheme, please load the colorscheme
     # layer, the value of this option is a string.
     #colorscheme = "gruvbox"
-    #colorscheme = "jellybeans"
+    colorscheme = "jellybeans"
     #colorscheme_bg = "dark"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors, the type of the value is boolean, true or false.
@@ -49,11 +49,11 @@
 [[layers]]
     name = "fzf"
 
-[[layers]]
-    name = "colorscheme"
-    random_theme = true
+#[[layers]]
+#    name = "colorscheme"
+#    random_theme = true
     #frequency = "daily"
-    frequency = "hourly"
+#    frequency = "hourly"
 
 [[layers]]
     name = "lang#c"
@@ -76,9 +76,18 @@
 
 # This is an example for adding custom plugins lilydjwg/colorizer
 [[custom_plugins]]
-    #name = "lilydjwg/colorizer"
-    #merged = false
+    name = "lilydjwg/colorizer"
+    merged = false
+
+[[custom_plugins]]
     name = "tpope/vim-fugitive"
+
+[[custom_plugins]]
     name = "jremmen/vim-ripgrep"
+
+[[custom_plugins]]
     name = "rhysd/vim-clang-format"
+
+[[custom_plugins]]
+    name = "nanotech/jellybeans.vim"
 
