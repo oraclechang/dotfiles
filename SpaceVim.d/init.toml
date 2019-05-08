@@ -42,12 +42,20 @@
     auto-completion-tab-key-behavior = "cycle"
 
 [[layers]]
+    name = "lsp"
+    g:spacevim_autocomplete_method = "coc"
+    filetypes = [
+        "c",
+        "cpp"
+    ]
+
+[[layers]]
     name = "shell"
     default_position = "top"
     default_height = 30
 
-[[layers]]
-    name = "fzf"
+# [[layers]]
+#     name = "fzf"
 
 #[[layers]]
 #    name = "colorscheme"
@@ -55,18 +63,15 @@
     #frequency = "daily"
 #    frequency = "hourly"
 
-[[layers]]
-    name = "lang#c"
-    enable_clang_syntax_highlight = true
-    clang_executable = "/usr/bin/clang"
-    [layer.clang_std]
-        cpp = "c++17"
+# [[layers]]
+#     name = "lang#c"
+#     enable_clang_syntax_highlight = true
+#     clang_executable = "/usr/bin/clang"
+#     [layer.clang_std]
+#         cpp = "c++17"
 
-[[layers]]
-    name = "lang#python"
-
-[[layers]] # not loaded
-    name = "language-server-protocol"
+# [[layers]]
+#     name = "lang#python"
 
 [[layers]]
     name = "VersionControl"
