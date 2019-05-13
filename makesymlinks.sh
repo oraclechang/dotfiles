@@ -44,6 +44,7 @@ cp "$colorSchemeSrcDir""jellybeans.vim" "$colorSchemeDestDir"
 echo "Copy fish functions"
 mkdir -p "$fish_dest_dir"
 cp -R "$fish_src_dir" "$fish_dest_dir"
+cp ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
 
 echo "Copy UltiSnips scripts"
 mkdir -p "$ultisnips_dest_dir"
