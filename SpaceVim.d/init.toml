@@ -36,6 +36,11 @@
     project_rooter_automatically = 0    # https://github.com/SpaceVim/SpaceVim/issues/2354
 
 # Enable autocomplete layer
+#[[layers]]
+#    name = "autocomplete"
+#    auto-completion-return-key-behavior = "complete"
+#    auto-completion-tab-key-behavior = "cycle"
+
 [[layers]]
     name = "autocomplete"
     auto-completion-return-key-behavior = "complete"
