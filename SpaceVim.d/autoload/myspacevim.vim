@@ -5,6 +5,8 @@ function! myspacevim#before() abort
     "nnoremap <F4> :ClangFormat<CR>
 	"nnoremap <silent> <F5> :ClangFormat<CR>:w<CR>:call SpaceVim#plugins#runner#open('ninja')<CR>
 	nnoremap <silent> <F5> :call SpaceVim#plugins#runner#open('ninja')<CR>
+    set ic
+    set mouse=r
 endfunction
 
 function! myspacevim#after() abort
