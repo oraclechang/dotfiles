@@ -35,7 +35,7 @@
 
     project_rooter_automatically = 0    # https://github.com/SpaceVim/SpaceVim/issues/2354
 
-    snippet_engine = "ultisnips"
+    #snippet_engine = "ultisnips"
     #enable_neomake = false
     #lint_on_the_fly = false
 
