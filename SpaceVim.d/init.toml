@@ -40,8 +40,9 @@
     #lint_on_the_fly = false
 
 # Enable autocomplete layer
-#[[layers]]
-#    name = "autocomplete"
+[[layers]]
+    name = "autocomplete"
+    g:spacevim_autocomplete_method = "coc"
 #    auto-completion-return-key-behavior = "complete"
 #    auto-completion-tab-key-behavior = "cycle"
 
@@ -52,7 +53,7 @@
 
 [[layers]]
     name = "lsp"
-    g:spacevim_autocomplete_method = "coc"
+    enable = false
     filetypes = [
         "c",
         "cpp"
