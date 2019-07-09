@@ -4,9 +4,12 @@ function! myspacevim#before() abort
     "nnoremap <F3> :set nonu<CR>:set relativenumber!<CR>
     "nnoremap <F4> :ClangFormat<CR>
 	"nnoremap <silent> <F5> :ClangFormat<CR>:w<CR>:call SpaceVim#plugins#runner#open('ninja')<CR>
-	nnoremap <silent> <F5> :call SpaceVim#plugins#runner#open('ninja')<CR>
+	"nnoremap <silent> <F5> :call SpaceVim#plugins#runner#open('ninja')<CR>
+	nnoremap <silent> <F5> :call SpaceVim#plugins#runner#open('ninja -C ./build/')<CR>
     set ic
     set mouse=r
+
+    let g:spacevim_enable_vimfiler_welcome = 0
 endfunction
 
 function! myspacevim#after() abort
