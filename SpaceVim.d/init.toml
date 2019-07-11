@@ -113,3 +113,5 @@
 [[custom_plugins]]
     name = "nanotech/jellybeans.vim"
 
+[[custom_plugins]]
+    name = "vim-scripts/a.vim"
