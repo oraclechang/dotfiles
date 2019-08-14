@@ -39,6 +39,8 @@
     #enable_neomake = false
     #lint_on_the_fly = false
 
+    autocomplete_parens = 0
+
 # Enable autocomplete layer
 [[layers]]
     name = "autocomplete"
