@@ -14,3 +14,5 @@ set -g fish_user_paths "$HOME/.gem/ruby/2.3.0/bin" $fish_user_paths
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
 set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
+set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
