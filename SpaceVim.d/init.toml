@@ -64,7 +64,8 @@
     name = "lsp"
     filetypes = [
         "c",
-        "cpp"
+        "cpp",
+        "python"
     ]
 
 [[layers]]
