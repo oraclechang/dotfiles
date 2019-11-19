@@ -9,6 +9,7 @@
 *.o
 *.so
 *.idx
+*.pyc
 
 # Packages #
 ############
