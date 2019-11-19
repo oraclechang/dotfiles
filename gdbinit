@@ -30,6 +30,7 @@ define loadhdb
     shar libhdbhex.so
     shar libhdbqohex.so
     shar libhdbcalcengine.so
+    shar libhdbsqlpreprocessor.so
 end
 
 define p_
