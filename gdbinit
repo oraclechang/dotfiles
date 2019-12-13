@@ -32,6 +32,8 @@ define loadhdb
     shar libhdbcalcengine.so
     shar libhdbsqlpreprocessor.so
     shar libhdbastruleengine.so
+    shar libhdbsqlchecker.so
+    shar libhdbdatastatistics.so
 end
 
 define p_
