@@ -291,7 +291,7 @@ endif
 "Bundle 'UltiSnips'
 
 "-----------------------------------------------------------------
-Bundle 'SirVer/ultisnips'
+"Bundle 'SirVer/ultisnips'
 "https://github.com/sirver/ultisnips
 
 " Snippets are separated from the engine. Add this if you want them:
@@ -315,14 +315,14 @@ Bundle 'ervandew/supertab'
 "https://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+"let g:UltiSnipsExpandTrigger = "<tab>"
+"let g:UltiSnipsJumpForwardTrigger = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:SuperTabCrMapping = 0
 "-----------------------------------------------------------------
@@ -368,11 +368,11 @@ let g:rg_highlight = 1
 
 Plugin 'unimpaired.vim'
 
-Bundle 'https://github.com/Valloric/YouCompleteMe.git'
-let g:ycm_autoclose_preview_window_after_insertion = 1
+"Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+"let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "let g:ycm_global_ycm_extra_conf = '/Users/chuho/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
+"let g:ycm_confirm_extra_conf = 0
 
 Bundle 'https://github.com/matze/vim-move.git'
 let g:move_key_modifier = 'C'
@@ -512,7 +512,8 @@ let g:ag_prg="/usr/local/bin/ag --column"
 
 
 "fzf
-set rtp+=/usr/local/opt/fzf
+"set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/bin/fzf
 
 "####################################################################################################################
 " 08. Mapping
@@ -529,7 +530,7 @@ if has('mac') "https://superuser.com/questions/194715/how-to-make-vim-settings-c
 else
     nnoremap <F5> :Dispatch hdbcc hm b -b MyOptimized -j 700 all_core<CR>
 endif
-nnoremap <F6> :YcmCompleter FixIt<CR>
+"nnoremap <F6> :YcmCompleter FixIt<CR>
 nnoremap <F7> :NERDTreeToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
 "nnoremap <F8> :SrcExplToggle<CR>
@@ -544,6 +545,9 @@ nnoremap K :grep! "\b\s?<C-R><C-W>\b"<CR>:cw<CR>
 "https://vi.stackexchange.com/questions/3163/how-to-setup-ag-the-silver-searcher-in-vim
 
 nnoremap <C-p> :Files<Cr>
+
+nnoremap <leader>l :source ~/git_repo/LcovViewerVimExtension/lcovViewer.vim<cr>
+nnoremap <leader>u :sign unplace *<cr>
 
 :nn <A-a> <C-a>
 
