@@ -197,9 +197,10 @@ Bundle 'a.vim'
 
 "Bundle 'https://github.com/fholgado/minibufexpl.vim'
 
-Bundle 'fholgado/minibufexpl.vim'    
+"Bundle 'fholgado/minibufexpl.vim'
 "minibufexpl.vim 의 업데이트 버전
 "let g:miniBufExplBRSplit = 1
+Plugin 'ap/vim-buftabline'
 
 "Bundle 'matchparenpp' 
 " 괄호 (),[],{}에 커서를 갖다대면, 상대 괄호를 깜박여 줍니다.
@@ -512,8 +513,12 @@ let g:ag_prg="/usr/local/bin/ag --column"
 
 
 "fzf
-"set rtp+=/usr/local/opt/fzf
-set rtp+=/usr/bin/fzf
+if has('mac')
+    set rtp+=/usr/local/opt/fzf
+else
+    set rtp+=/usr/bin/fzf
+endif
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 "####################################################################################################################
 " 08. Mapping
