@@ -516,7 +516,7 @@ let g:ag_prg="/usr/local/bin/ag --column"
 if has('mac')
     set rtp+=/usr/local/opt/fzf
 else
-    set rtp+=/usr/bin/fzf
+    set rtp+=~/.fzf
 endif
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
