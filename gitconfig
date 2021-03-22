@@ -42,10 +42,10 @@
 #[mergetool "p4merge"]
 #    path = /usr/local/bin/p4merge
 [user]
-    name = Chuho Chang
+	name = Chuho Chang
     #email = oraclechang@gmail.com
-	email = chuho.chang@sap.com
+	email = ccoracle@amazon.com
 [github]
-	user = chuho.chang@sap.com
+	user = oraclechang@gmail.com
 [rerere]
 	enabled = true
