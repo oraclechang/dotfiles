@@ -11,7 +11,7 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 colorSchemeSrcDir=~/.vim/bundle/jellybeans.vim/colors/
 colorSchemeDestDir=~/.vim/colors/
 #files="bashrc vimrc vim zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
-files="gitconfig gitignore tmux.conf vimrc gvimrc gdbinit ackrc vrapperrc"    # list of files/folders to symlink in homedir
+files="gitconfig gitignore tmux.conf vimrc gvimrc gdbinit ackrc vrapperrc zshrc"    # list of files/folders to symlink in homedir
 
 ultisnips_src_dir=~/dotfiles/UltiSnips/
 ultisnips_dest_dir=~/.vim/UltiSnips/
