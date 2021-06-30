@@ -76,6 +76,7 @@ alias gbr='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias gco='git checkout '
+alias grs='git restore --staged '
 
 ## Amazon tool
 alias bb=brazil-build
@@ -97,6 +98,7 @@ alias sam="brazil-build-tool-exec sam"
 
 ## Source
 alias cdbs='cd ~/workplace/RxtHofBackendService/src/RxtHofBackendService'
+alias cdw='cd ~/workplace'
 
 
 # qfind - used to quickly find files that contain a string in a directory
