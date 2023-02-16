@@ -14,7 +14,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="xiong-chiamiov-plus"
 #ZSH_THEME="pygmalion"
-ZSH_THEME="random"
+#ZSH_THEME="random"
+ZSH_THEME="geoffgarside"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
