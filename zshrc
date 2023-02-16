@@ -34,9 +34,17 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	source /home/ccoracle/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source /home/ccoracle/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+	source /home/ccoracle/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then # Mac OSX
+	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+	source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+else
+fi
+
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
