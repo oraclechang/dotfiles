@@ -245,6 +245,34 @@ function zi() {
 eval "$(zoxide init zsh)"
 
 ##############################################################################################
+# functions
+##############################################################################################
+function clear-result() {
+    rm -rf /tmp/tux/ccoracle/result/*
+}
+
+function check-result() {
+    ll /tmp/tux/ccoracle/result/*
+}
+
+function move-result() {
+    if (( $# == 1 ))
+    then
+        mkdir ~/Downloads/${1}
+        mv /tmp/tux/ccoracle/result/* ~/Downloads/${1}/.
+    fi
+}
+
+function spark-shell() {
+    export SPARK_SUBMIT_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+    bin/spark-shell --driver-memory 3g
+}
+
+function spark-sql() {
+    export SPARK_SUBMIT_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+    bin/spark-sql --driver-memory 3g
+}
+##############################################################################################
 # Option
 ##############################################################################################
 #setopt nosharehistory
