@@ -281,7 +281,14 @@ function spark-sql() {
 # Exports
 ##############################################################################################
 export PATH=$HOME/.toolbox/bin:$PATH
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
+#export PATH=$JAVA_HOME/bin:$PATH
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+if ! jenv plugins | grep -q export; then
+        jenv enable-plugin export
+fi
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$JAVA_HOME/bin:$PATH
