@@ -272,6 +272,25 @@ function spark-sql() {
     export SPARK_SUBMIT_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
     bin/spark-sql --driver-memory 3g
 }
+
+##############################################################################################
+# python setting
+##############################################################################################
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ccoracle/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ccoracle/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ccoracle/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ccoracle/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
 ##############################################################################################
 # Option
 ##############################################################################################
@@ -297,3 +316,4 @@ eval "$(jenv init -)"
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
+
