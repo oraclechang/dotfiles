@@ -299,6 +299,7 @@ unset __conda_setup
 ##############################################################################################
 # Exports
 ##############################################################################################
+export LESS="eFRX"
 export PATH=$HOME/.toolbox/bin:$PATH
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
