@@ -273,6 +273,33 @@ function spark-sql() {
     bin/spark-sql --driver-memory 3g
 }
 
+copytoremote() {
+	local file=$1
+	local remote_host="dev-dsk-ccoracle-2a-e08e9981.us-west-2.amazon.com"
+	local remote_path="/home/ccoracle/Downloads/"
+
+	if [[ -f $file ]]; then
+		scp "$file" "${remote_host}:${remote_path}"
+		echo "File $file copied to ${remote_host}:${remote_path}"
+	else
+		echo "Error: File $file does not exist."
+	fi
+}
+
+copyfromremote() {
+    local remote_file=$1
+    local remote_host="dev-dsk-ccoracle-2a-e08e9981.us-west-2.amazon.com"
+    local remote_path="/home/ccoracle/Downloads/"
+    local local_path="/Users/ccoracle/Downloads"
+
+    if ssh "${remote_host}" test -f "${remote_path}${remote_file}"; then
+        scp "${remote_host}:${remote_path}${remote_file}" "${local_path}"
+        echo "File ${remote_file} copied from ${remote_host}:${remote_path} to ${local_path}"
+    else
+        echo "Error: File ${remote_file} does not exist on remote host."
+    fi
+}
+
 ##############################################################################################
 # python setting
 ##############################################################################################
