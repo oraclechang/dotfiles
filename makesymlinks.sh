@@ -52,3 +52,6 @@ cp -R "$ultisnips_src_dir" "$ultisnips_dest_dir"
 echo "Link SpaceVim"
 ln -s ~/dotfiles/SpaceVim.d ~/.SpaceVim.d
 
+echo "Link starship"
+ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+
