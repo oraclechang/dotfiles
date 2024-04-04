@@ -277,9 +277,11 @@ function spark-sql() {
 }
 
 copytoremote() {
-	local file=$1
+	local file_path=$1
 	local remote_host="dev-dsk-ccoracle-2a-e08e9981.us-west-2.amazon.com"
 	local remote_path="/home/ccoracle/Downloads/"
+
+    local file=$(realpath "$file_path")
 
 	if [[ -f $file ]]; then
 		scp "$file" "${remote_host}:${remote_path}"
