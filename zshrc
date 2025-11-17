@@ -22,6 +22,7 @@ ZSH_THEME="geoffgarside"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
+export ZSH_UPDATE_INTERVAL=60
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -112,6 +113,7 @@ alias gc='git commit'
 alias gd='git diff'
 alias gco='git checkout '
 alias grs='git restore --staged '
+alias gcp='git cherry-pick '
 
 ## Amazon tool
 alias bb=brazil-build
@@ -242,7 +244,8 @@ function zi() {
 #
 # To initialize zoxide, add this to your configuration (usually ~/.zshrc):
 #
-eval "$(zoxide init zsh)"
+#eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 # =============================================================================
 eval "$(starship init zsh)"
@@ -266,6 +269,15 @@ function move-result() {
     fi
 }
 
+function copy-jar() {
+    if (( $# == 1 ))
+    then
+        aws s3 cp core/target/spark-core_2.12-3.4.1-amzn-2-SNAPSHOT.jar s3://ccoracle-bonfire-dev-us-east-2/spark-jars/${1}/spark-core_2.12-3.4.1-amzn-2-SNAPSHOT.jar
+        aws s3 cp sql/catalyst/target/spark-catalyst_2.12-3.4.1-amzn-2-SNAPSHOT.jar s3://ccoracle-bonfire-dev-us-east-2/spark-jars/${1}/spark-catalyst_2.12-3.4.1-amzn-2-SNAPSHOT.jar
+        aws s3 cp sql/core/target/spark-sql_2.12-3.4.1-amzn-2-SNAPSHOT.jar s3://ccoracle-bonfire-dev-us-east-2/spark-jars/${1}/spark-sql_2.12-3.4.1-amzn-2-SNAPSHOT.jar
+    fi
+}
+
 function spark-shell() {
     export SPARK_SUBMIT_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
     bin/spark-shell --driver-memory 3g
@@ -276,7 +288,7 @@ function spark-sql() {
     bin/spark-sql --driver-memory 3g
 }
 
-copytoremote() {
+function ctr() {
 	local file_path=$1
 	local remote_host="dev-dsk-ccoracle-2a-e08e9981.us-west-2.amazon.com"
 	local remote_path="/home/ccoracle/Downloads/"
@@ -291,9 +303,38 @@ copytoremote() {
 	fi
 }
 
-copyfromremote() {
+function ctr2() {
+	local file_path=$1
+	local remote_host="dev-dsk-ccoracle-2a-2b32a7e0.us-west-2.amazon.com"
+	local remote_path="/home/ccoracle/Downloads/"
+
+    local file=$(realpath "$file_path")
+
+	if [[ -f $file ]]; then
+		scp "$file" "${remote_host}:${remote_path}"
+		echo "File $file copied to ${remote_host}:${remote_path}"
+	else
+		echo "Error: File $file does not exist."
+	fi
+}
+
+function cfr() {
     local remote_file=$1
     local remote_host="dev-dsk-ccoracle-2a-e08e9981.us-west-2.amazon.com"
+    local remote_path="/home/ccoracle/Downloads/"
+    local local_path="/Users/ccoracle/Downloads"
+
+    if ssh "${remote_host}" test -f "${remote_path}${remote_file}"; then
+        scp "${remote_host}:${remote_path}${remote_file}" "${local_path}"
+        echo "File ${remote_file} copied from ${remote_host}:${remote_path} to ${local_path}"
+    else
+        echo "Error: File ${remote_file} does not exist on remote host."
+    fi
+}
+
+function cfr2() {
+    local remote_file=$1
+    local remote_host="dev-dsk-ccoracle-2a-2b32a7e0.us-west-2.amazon.com"
     local remote_path="/home/ccoracle/Downloads/"
     local local_path="/Users/ccoracle/Downloads"
 
