@@ -95,3 +95,5 @@ CTestTestfile.cmake
 .ninja_log
 build.ninja
 rules.ninja
+
+.idea/**/*.xml
