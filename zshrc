@@ -6,6 +6,8 @@ PATH=/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # Path to your oh-my-zsh configuration.
+export ZSH_UPDATE_INTERVAL=60
+
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -22,7 +24,6 @@ ZSH_THEME="geoffgarside"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
-export ZSH_UPDATE_INTERVAL=60
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
