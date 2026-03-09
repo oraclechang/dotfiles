@@ -7,7 +7,7 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh configuration.
-export ZSH_UPDATE_INTERVAL=60
+export ZSH_UPDATE_INTERVAL=90
 
 ZSH=$HOME/.oh-my-zsh
 
